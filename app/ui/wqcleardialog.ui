@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>WQClearDialog</class>
+ <widget class="QDialog" name="WQClearDialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>301</width>
+    <height>208</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Clear Contents</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout_2">
+   <item>
+    <widget class="QGroupBox" name="clearButtonGroup">
+     <property name="title">
+      <string>Selection</string>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout">
+      <item>
+       <widget class="QCheckBox" name="clearAllCheckBox">
+        <property name="toolTip">
+         <string>Delete all information in selected entries</string>
+        </property>
+        <property name="whatsThis">
+         <string>When checked all information will be deleted from the selected entries</string>
+        </property>
+        <property name="text">
+         <string>Clear &amp;All</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <spacer name="topVerticalSpacer">
+        <property name="orientation">
+         <enum>Qt::Vertical</enum>
+        </property>
+        <property name="sizeType">
+         <enum>QSizePolicy::Fixed</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>18</width>
+          <height>13</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <widget class="QCheckBox" name="clearTextCheckBox">
+        <property name="toolTip">
+         <string>Delete the text from selected entries</string>
+        </property>
+        <property name="whatsThis">
+         <string>When checked the text will be deleted from selected entries</string>
+        </property>
+        <property name="text">
+         <string>&amp;Text</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QCheckBox" name="clearImageCheckBox">
+        <property name="toolTip">
+         <string>Delete the image link from selected entries</string>
+        </property>
+        <property name="whatsThis">
+         <string>When checked the image link will be deleted from selected entries</string>
+        </property>
+        <property name="text">
+         <string>&amp;Image Links</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QCheckBox" name="clearSoundCheckBox">
+        <property name="toolTip">
+         <string>Delete the sound link from selected entries</string>
+        </property>
+        <property name="whatsThis">
+         <string>When checked the sound link will be deleted from selected entries</string>
+        </property>
+        <property name="text">
+         <string>&amp;Sound Links</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <spacer name="bottomVerticalSpacer">
+        <property name="orientation">
+         <enum>Qt::Vertical</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>20</width>
+          <height>15</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <widget class="QDialogButtonBox" name="buttonBox">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <property name="standardButtons">
+      <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>buttonBox</sender>
+   <signal>accepted()</signal>
+   <receiver>WQClearDialog</receiver>
+   <slot>accept()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>248</x>
+     <y>254</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>157</x>
+     <y>274</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>buttonBox</sender>
+   <signal>rejected()</signal>
+   <receiver>WQClearDialog</receiver>
+   <slot>reject()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>316</x>
+     <y>260</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>286</x>
+     <y>274</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>

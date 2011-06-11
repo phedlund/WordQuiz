@@ -1,0 +1,835 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>407</width>
+    <height>297</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>WordQuiz</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="../wordquiz.qrc">
+    <normaloff>:/kwordquiz/icons/hi32-app-kwordquiz.png</normaloff>:/kwordquiz/icons/hi32-app-kwordquiz.png</iconset>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QGridLayout"/>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>407</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuFile">
+    <property name="title">
+     <string>&amp;File</string>
+    </property>
+    <addaction name="fileNew"/>
+    <addaction name="fileOpen"/>
+    <addaction name="fileOpenRecent"/>
+    <addaction name="fileGHNS"/>
+    <addaction name="separator"/>
+    <addaction name="fileSave"/>
+    <addaction name="fileSaveAs"/>
+    <addaction name="separator"/>
+    <addaction name="filePrint"/>
+    <addaction name="filePrintPreview"/>
+    <addaction name="separator"/>
+    <addaction name="fileClose"/>
+    <addaction name="separator"/>
+    <addaction name="fileQuit"/>
+   </widget>
+   <widget class="QMenu" name="menuEdit">
+    <property name="title">
+     <string>&amp;Edit</string>
+    </property>
+    <addaction name="separator"/>
+    <addaction name="editCut"/>
+    <addaction name="editCopy"/>
+    <addaction name="editPaste"/>
+    <addaction name="editClear"/>
+    <addaction name="separator"/>
+    <addaction name="editInsert"/>
+    <addaction name="editDelete"/>
+    <addaction name="separator"/>
+    <addaction name="editMarkBlank"/>
+    <addaction name="editUnmarkBlank"/>
+   </widget>
+   <widget class="QMenu" name="menuMode">
+    <property name="title">
+     <string>Mode</string>
+    </property>
+    <addaction name="mode1"/>
+    <addaction name="mode2"/>
+    <addaction name="mode3"/>
+    <addaction name="mode4"/>
+    <addaction name="mode5"/>
+   </widget>
+   <widget class="QMenu" name="menuSettings">
+    <property name="title">
+     <string>Settings</string>
+    </property>
+    <addaction name="configShowSearchBar"/>
+    <addaction name="separator"/>
+    <addaction name="configToolbars"/>
+    <addaction name="configShowStatusbar"/>
+    <addaction name="separator"/>
+    <addaction name="configConfigureShortcuts"/>
+    <addaction name="configConfigureToolbars"/>
+    <addaction name="configConfigureNotifications"/>
+    <addaction name="configConfigureWordQuiz"/>
+   </widget>
+   <widget class="QMenu" name="menuHelp">
+    <property name="title">
+     <string>Help</string>
+    </property>
+    <addaction name="helpHandbook"/>
+    <addaction name="helpWhatsThis"/>
+    <addaction name="separator"/>
+    <addaction name="helpReportBug"/>
+    <addaction name="separator"/>
+    <addaction name="helpSwitchLanguage"/>
+    <addaction name="separator"/>
+    <addaction name="helpAboutWordQuiz"/>
+    <addaction name="helpAboutQt"/>
+   </widget>
+   <widget class="QMenu" name="menuVocabulary">
+    <property name="title">
+     <string>V&amp;ocabulary</string>
+    </property>
+    <addaction name="vocabLanguages"/>
+    <addaction name="vocabFont"/>
+    <addaction name="separator"/>
+    <addaction name="vocabImage"/>
+    <addaction name="vocabSound"/>
+    <addaction name="separator"/>
+    <addaction name="vocabAdjustRows"/>
+    <addaction name="separator"/>
+    <addaction name="vocabShuffle"/>
+   </widget>
+   <widget class="QMenu" name="menuQuiz">
+    <property name="title">
+     <string>Quiz</string>
+    </property>
+    <addaction name="quizCheck"/>
+    <addaction name="separator"/>
+    <addaction name="qaMarkLastCorrect"/>
+    <addaction name="flashKnow"/>
+    <addaction name="flashDontKnow"/>
+    <addaction name="separator"/>
+    <addaction name="qaHint"/>
+    <addaction name="quizPlayAudio"/>
+    <addaction name="separator"/>
+    <addaction name="quizRestart"/>
+    <addaction name="quizRepeatErrors"/>
+    <addaction name="separator"/>
+    <addaction name="quizExportErrors"/>
+   </widget>
+   <addaction name="menuFile"/>
+   <addaction name="menuEdit"/>
+   <addaction name="menuVocabulary"/>
+   <addaction name="menuMode"/>
+   <addaction name="menuQuiz"/>
+   <addaction name="menuSettings"/>
+   <addaction name="menuHelp"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <widget class="QToolBar" name="toolBarMain">
+   <property name="windowTitle">
+    <string>Main Toolbar</string>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>22</width>
+     <height>22</height>
+    </size>
+   </property>
+   <property name="toolButtonStyle">
+    <enum>Qt::ToolButtonTextUnderIcon</enum>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="fileNew"/>
+   <addaction name="fileOpen"/>
+   <addaction name="fileSave"/>
+   <addaction name="filePrint"/>
+   <addaction name="separator"/>
+   <addaction name="editCut"/>
+   <addaction name="editCopy"/>
+   <addaction name="editPaste"/>
+   <addaction name="separator"/>
+   <addaction name="mode0"/>
+  </widget>
+  <widget class="QToolBar" name="toolBarQuiz">
+   <property name="windowTitle">
+    <string>Quiz Toolbar</string>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>22</width>
+     <height>22</height>
+    </size>
+   </property>
+   <property name="toolButtonStyle">
+    <enum>Qt::ToolButtonTextBesideIcon</enum>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>RightToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="quizCheck"/>
+   <addaction name="separator"/>
+   <addaction name="qaMarkLastCorrect"/>
+   <addaction name="flashKnow"/>
+   <addaction name="flashDontKnow"/>
+   <addaction name="separator"/>
+   <addaction name="qaHint"/>
+   <addaction name="quizPlayAudio"/>
+   <addaction name="separator"/>
+   <addaction name="quizRestart"/>
+   <addaction name="quizRepeatErrors"/>
+  </widget>
+  <widget class="QToolBar" name="toolBarCharacters">
+   <property name="windowTitle">
+    <string>Special Characters</string>
+   </property>
+   <property name="allowedAreas">
+    <set>Qt::BottomToolBarArea|Qt::RightToolBarArea|Qt::TopToolBarArea</set>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>22</width>
+     <height>22</height>
+    </size>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>BottomToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="actionChar1"/>
+   <addaction name="actionChar2"/>
+   <addaction name="actionChar3"/>
+   <addaction name="actionChar4"/>
+   <addaction name="actionChar5"/>
+   <addaction name="actionChar6"/>
+   <addaction name="actionChar7"/>
+   <addaction name="actionChar8"/>
+   <addaction name="actionChar9"/>
+  </widget>
+  <action name="fileNew">
+   <property name="icon">
+    <iconset resource="../wordquiz.qrc">
+     <normaloff>:/src/pics/document-new.png</normaloff>:/src/pics/document-new.png</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;New</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+N</string>
+   </property>
+  </action>
+  <action name="fileOpen">
+   <property name="icon">
+    <iconset resource="../wordquiz.qrc">
+     <normaloff>:/src/pics/document-open.png</normaloff>:/src/pics/document-open.png</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;Open...</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+O</string>
+   </property>
+  </action>
+  <action name="fileOpenRecent">
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Open Recent</string>
+   </property>
+  </action>
+  <action name="fileSave">
+   <property name="icon">
+    <iconset resource="../wordquiz.qrc">
+     <normaloff>:/src/pics/document-save.png</normaloff>:/src/pics/document-save.png</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;Save</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+S</string>
+   </property>
+  </action>
+  <action name="fileSaveAs">
+   <property name="icon">
+    <iconset resource="../wordquiz.qrc">
+     <normaloff>:/src/pics/document-save-as.png</normaloff>:/src/pics/document-save-as.png</iconset>
+   </property>
+   <property name="text">
+    <string>Save &amp;As...</string>
+   </property>
+  </action>
+  <action name="filePrint">
+   <property name="icon">
+    <iconset resource="../wordquiz.qrc">
+     <normaloff>:/src/pics/document-print.png</normaloff>:/src/pics/document-print.png</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;Print...</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+P</string>
+   </property>
+  </action>
+  <action name="fileClose">
+   <property name="icon">
+    <iconset resource="../wordquiz.qrc">
+     <normaloff>:/src/pics/window-close.png</normaloff>:/src/pics/window-close.png</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;Close</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+W</string>
+   </property>
+  </action>
+  <action name="fileQuit">
+   <property name="icon">
+    <iconset resource="../wordquiz.qrc">
+     <normaloff>:/src/pics/application-exit.png</normaloff>:/src/pics/application-exit.png</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;Quit</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Q</string>
+   </property>
+  </action>
+  <action name="editCut">
+   <property name="icon">
+    <iconset resource="../wordquiz.qrc">
+     <normaloff>:/src/pics/edit-cut.png</normaloff>:/src/pics/edit-cut.png</iconset>
+   </property>
+   <property name="text">
+    <string>Cu&amp;t</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+X</string>
+   </property>
+  </action>
+  <action name="editCopy">
+   <property name="icon">
+    <iconset resource="../wordquiz.qrc">
+     <normaloff>:/src/pics/edit-copy.png</normaloff>:/src/pics/edit-copy.png</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;Copy</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+C</string>
+   </property>
+  </action>
+  <action name="editPaste">
+   <property name="icon">
+    <iconset resource="../wordquiz.qrc">
+     <normaloff>:/src/pics/edit-paste.png</normaloff>:/src/pics/edit-paste.png</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;Paste</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+V</string>
+   </property>
+  </action>
+  <action name="editClear">
+   <property name="icon">
+    <iconset resource="../wordquiz.qrc">
+     <normaloff>:/src/pics/edit-clear.png</normaloff>:/src/pics/edit-clear.png</iconset>
+   </property>
+   <property name="text">
+    <string>C&amp;lear</string>
+   </property>
+   <property name="shortcut">
+    <string>Del</string>
+   </property>
+  </action>
+  <action name="editInsert">
+   <property name="icon">
+    <iconset resource="../wordquiz.qrc">
+     <normaloff>:/kwordquiz/pics/ox16-action-insert-table-row.png</normaloff>:/kwordquiz/pics/ox16-action-insert-table-row.png</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;Insert Row</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+I</string>
+   </property>
+  </action>
+  <action name="editDelete">
+   <property name="icon">
+    <iconset resource="../wordquiz.qrc">
+     <normaloff>:/kwordquiz/pics/ox16-action-delete-table-row.png</normaloff>:/kwordquiz/pics/ox16-action-delete-table-row.png</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;Delete Row</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+K</string>
+   </property>
+  </action>
+  <action name="editMarkBlank">
+   <property name="icon">
+    <iconset resource="../wordquiz.qrc">
+     <normaloff>:/kwordquiz/pics/ox16-action-markasblank.png</normaloff>:/kwordquiz/pics/ox16-action-markasblank.png</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;Mark As Blank</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+M</string>
+   </property>
+  </action>
+  <action name="editUnmarkBlank">
+   <property name="icon">
+    <iconset resource="../wordquiz.qrc">
+     <normaloff>:/kwordquiz/pics/ox16-action-unmarkasblank.png</normaloff>:/kwordquiz/pics/ox16-action-unmarkasblank.png</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;Unmark Blank</string>
+   </property>
+  </action>
+  <action name="vocabLanguages">
+   <property name="icon">
+    <iconset resource="../wordquiz.qrc">
+     <normaloff>:/kwordquiz/pics/ox16-action-languages.png</normaloff>:/kwordquiz/pics/ox16-action-languages.png</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;Column Settings...</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+L</string>
+   </property>
+  </action>
+  <action name="vocabFont">
+   <property name="icon">
+    <iconset resource="../wordquiz.qrc">
+     <normaloff>:/src/pics/preferences-desktop-font.png</normaloff>:/src/pics/preferences-desktop-font.png</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;Font...</string>
+   </property>
+  </action>
+  <action name="vocabAdjustRows">
+   <property name="text">
+    <string>&amp;Adjust Row Height</string>
+   </property>
+  </action>
+  <action name="vocabShuffle">
+   <property name="icon">
+    <iconset resource="../wordquiz.qrc">
+     <normaloff>:/kwordquiz/pics/hi16-action-shuffle.png</normaloff>:/kwordquiz/pics/hi16-action-shuffle.png</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;Shuffle</string>
+   </property>
+  </action>
+  <action name="mode2">
+   <property name="icon">
+    <iconset resource="../wordquiz.qrc">
+     <normaloff>:/kwordquiz/pics/ox22-action-mode2.png</normaloff>:/kwordquiz/pics/ox22-action-mode2.png</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;2</string>
+   </property>
+  </action>
+  <action name="mode3">
+   <property name="icon">
+    <iconset resource="../wordquiz.qrc">
+     <normaloff>:/kwordquiz/pics/ox22-action-mode3.png</normaloff>:/kwordquiz/pics/ox22-action-mode3.png</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;3</string>
+   </property>
+  </action>
+  <action name="mode4">
+   <property name="icon">
+    <iconset resource="../wordquiz.qrc">
+     <normaloff>:/kwordquiz/pics/ox22-action-mode4.png</normaloff>:/kwordquiz/pics/ox22-action-mode4.png</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;4</string>
+   </property>
+  </action>
+  <action name="mode5">
+   <property name="icon">
+    <iconset resource="../wordquiz.qrc">
+     <normaloff>:/kwordquiz/pics/ox22-action-mode5.png</normaloff>:/kwordquiz/pics/ox22-action-mode5.png</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;5</string>
+   </property>
+  </action>
+  <action name="quizCheck">
+   <property name="icon">
+    <iconset resource="../wordquiz.qrc">
+     <normaloff>:/kwordquiz/pics/ox16-action-answer-correct.png</normaloff>:/kwordquiz/pics/ox16-action-answer-correct.png</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;Check</string>
+   </property>
+   <property name="shortcut">
+    <string>Return</string>
+   </property>
+  </action>
+  <action name="flashKnow">
+   <property name="icon">
+    <iconset resource="../wordquiz.qrc">
+     <normaloff>:/kwordquiz/pics/hi16-action-know.png</normaloff>:/kwordquiz/pics/hi16-action-know.png</iconset>
+   </property>
+   <property name="text">
+    <string>I &amp;Know</string>
+   </property>
+   <property name="shortcut">
+    <string>K</string>
+   </property>
+  </action>
+  <action name="flashDontKnow">
+   <property name="icon">
+    <iconset resource="../wordquiz.qrc">
+     <normaloff>:/kwordquiz/pics/hi16-action-dontknow.png</normaloff>:/kwordquiz/pics/hi16-action-dontknow.png</iconset>
+   </property>
+   <property name="text">
+    <string>I &amp;Do Not Know</string>
+   </property>
+   <property name="shortcut">
+    <string>D</string>
+   </property>
+  </action>
+  <action name="qaHint">
+   <property name="icon">
+    <iconset resource="../wordquiz.qrc">
+     <normaloff>:/kwordquiz/pics/hi16-action-hint.png</normaloff>:/kwordquiz/pics/hi16-action-hint.png</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;Hint</string>
+   </property>
+  </action>
+  <action name="quizRestart">
+   <property name="icon">
+    <iconset resource="../wordquiz.qrc">
+     <normaloff>:/kwordquiz/pics/hi16-action-start-over.png</normaloff>:/kwordquiz/pics/hi16-action-start-over.png</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;Restart</string>
+   </property>
+  </action>
+  <action name="quizExportErrors">
+   <property name="icon">
+    <iconset resource="../wordquiz.qrc">
+     <normaloff>:/src/pics/document-save-as.png</normaloff>:/src/pics/document-save-as.png</iconset>
+   </property>
+   <property name="text">
+    <string>Export Errors &amp;As...</string>
+   </property>
+  </action>
+  <action name="configShowSearchBar">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Show Se&amp;arch</string>
+   </property>
+  </action>
+  <action name="configToolbars">
+   <property name="text">
+    <string>&amp;Toolbars</string>
+   </property>
+  </action>
+  <action name="configShowStatusbar">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Show St&amp;atusbar</string>
+   </property>
+  </action>
+  <action name="configConfigureShortcuts">
+   <property name="icon">
+    <iconset resource="../wordquiz.qrc">
+     <normaloff>:/src/pics/configure-shortcuts.png</normaloff>:/src/pics/configure-shortcuts.png</iconset>
+   </property>
+   <property name="text">
+    <string>Configure S&amp;hortcuts...</string>
+   </property>
+   <property name="menuRole">
+    <enum>QAction::NoRole</enum>
+   </property>
+  </action>
+  <action name="configConfigureToolbars">
+   <property name="icon">
+    <iconset resource="../wordquiz.qrc">
+     <normaloff>:/src/pics/configure-toolbars.png</normaloff>:/src/pics/configure-toolbars.png</iconset>
+   </property>
+   <property name="text">
+    <string>Configure Tool&amp;bars...</string>
+   </property>
+   <property name="menuRole">
+    <enum>QAction::NoRole</enum>
+   </property>
+  </action>
+  <action name="configConfigureNotifications">
+   <property name="icon">
+    <iconset resource="../wordquiz.qrc">
+     <normaloff>:/src/pics/preferences-desktop-notification.png</normaloff>:/src/pics/preferences-desktop-notification.png</iconset>
+   </property>
+   <property name="text">
+    <string>Configure &amp;Notifications...</string>
+   </property>
+   <property name="menuRole">
+    <enum>QAction::NoRole</enum>
+   </property>
+  </action>
+  <action name="configConfigureWordQuiz">
+   <property name="icon">
+    <iconset resource="../wordquiz.qrc">
+     <normaloff>:/src/pics/configure.png</normaloff>:/src/pics/configure.png</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;Configure WordQuiz...</string>
+   </property>
+  </action>
+  <action name="helpHandbook">
+   <property name="icon">
+    <iconset resource="../wordquiz.qrc">
+     <normaloff>:/src/pics/help-contents.png</normaloff>:/src/pics/help-contents.png</iconset>
+   </property>
+   <property name="text">
+    <string>WordQuiz &amp;Handbook</string>
+   </property>
+   <property name="shortcut">
+    <string>F1</string>
+   </property>
+  </action>
+  <action name="helpWhatsThis">
+   <property name="icon">
+    <iconset resource="../wordquiz.qrc">
+     <normaloff>:/src/pics/help-contextual.png</normaloff>:/src/pics/help-contextual.png</iconset>
+   </property>
+   <property name="text">
+    <string>What's This</string>
+   </property>
+   <property name="shortcut">
+    <string>Shift+F1</string>
+   </property>
+  </action>
+  <action name="helpReportBug">
+   <property name="icon">
+    <iconset resource="../wordquiz.qrc">
+     <normaloff>:/src/pics/tools-report-bug.png</normaloff>:/src/pics/tools-report-bug.png</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;Report Bug...</string>
+   </property>
+  </action>
+  <action name="helpSwitchLanguage">
+   <property name="icon">
+    <iconset resource="../wordquiz.qrc">
+     <normaloff>:/src/pics/preferences-desktop-locale.png</normaloff>:/src/pics/preferences-desktop-locale.png</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;Switch Application Language...</string>
+   </property>
+  </action>
+  <action name="helpAboutWordQuiz">
+   <property name="icon">
+    <iconset resource="../wordquiz.qrc">
+     <normaloff>:/kwordquiz/icons/hi16-app-kwordquiz.png</normaloff>:/kwordquiz/icons/hi16-app-kwordquiz.png</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;About WordQuiz...</string>
+   </property>
+  </action>
+  <action name="helpAboutQt">
+   <property name="icon">
+    <iconset resource="../wordquiz.qrc">
+     <normaloff>:/src/pics/qt-logo.png</normaloff>:/src/pics/qt-logo.png</iconset>
+   </property>
+   <property name="text">
+    <string>About &amp;Qt...</string>
+   </property>
+   <property name="menuRole">
+    <enum>QAction::AboutQtRole</enum>
+   </property>
+  </action>
+  <action name="mode1">
+   <property name="icon">
+    <iconset resource="../wordquiz.qrc">
+     <normaloff>:/kwordquiz/pics/ox22-action-mode1.png</normaloff>:/kwordquiz/pics/ox22-action-mode1.png</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;1</string>
+   </property>
+  </action>
+  <action name="mode0">
+   <property name="icon">
+    <iconset>
+     <normaloff/>
+    </iconset>
+   </property>
+   <property name="text">
+    <string>0</string>
+   </property>
+  </action>
+  <action name="quizRepeatErrors">
+   <property name="icon">
+    <iconset resource="../wordquiz.qrc">
+     <normaloff>:/kwordquiz/pics/hi16-action-repeat.png</normaloff>:/kwordquiz/pics/hi16-action-repeat.png</iconset>
+   </property>
+   <property name="text">
+    <string>Repeat &amp;Errors</string>
+   </property>
+  </action>
+  <action name="actionChar1">
+   <property name="text">
+    <string>char1</string>
+   </property>
+  </action>
+  <action name="actionChar2">
+   <property name="text">
+    <string>char2</string>
+   </property>
+  </action>
+  <action name="actionChar3">
+   <property name="text">
+    <string>char3</string>
+   </property>
+  </action>
+  <action name="actionChar4">
+   <property name="text">
+    <string>char4</string>
+   </property>
+  </action>
+  <action name="actionChar5">
+   <property name="text">
+    <string>char5</string>
+   </property>
+  </action>
+  <action name="actionChar6">
+   <property name="text">
+    <string>char6</string>
+   </property>
+  </action>
+  <action name="actionChar7">
+   <property name="text">
+    <string>char7</string>
+   </property>
+  </action>
+  <action name="actionChar8">
+   <property name="text">
+    <string>char8</string>
+   </property>
+  </action>
+  <action name="actionChar9">
+   <property name="text">
+    <string>char9</string>
+   </property>
+  </action>
+  <action name="fileGHNS">
+   <property name="icon">
+    <iconset resource="../wordquiz.qrc">
+     <normaloff>:/src/pics/get-hot-new-stuff.png</normaloff>:/src/pics/get-hot-new-stuff.png</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;Download New Vocabularies...</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+G</string>
+   </property>
+  </action>
+  <action name="filePrintPreview">
+   <property name="icon">
+    <iconset resource="../wordquiz.qrc">
+     <normaloff>:/src/pics/document-print-preview.png</normaloff>
+     <normalon>:/src/pics/document-print-preview.png</normalon>:/src/pics/document-print-preview.png</iconset>
+   </property>
+   <property name="text">
+    <string>Print Previe&amp;w</string>
+   </property>
+  </action>
+  <action name="vocabImage">
+   <property name="icon">
+    <iconset resource="../wordquiz.qrc">
+     <normaloff>:/src/pics/image-x-generic.png</normaloff>:/src/pics/image-x-generic.png</iconset>
+   </property>
+   <property name="text">
+    <string>Link &amp;Image...</string>
+   </property>
+  </action>
+  <action name="vocabSound">
+   <property name="icon">
+    <iconset resource="../wordquiz.qrc">
+     <normaloff>:/src/pics/audio-x-generic.png</normaloff>:/src/pics/audio-x-generic.png</iconset>
+   </property>
+   <property name="text">
+    <string>Link &amp;Sound...</string>
+   </property>
+  </action>
+  <action name="quizPlayAudio">
+   <property name="icon">
+    <iconset resource="../wordquiz.qrc">
+     <normaloff>:/src/pics/media-playback-start.png</normaloff>:/src/pics/media-playback-start.png</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;Play Audio</string>
+   </property>
+   <property name="statusTip">
+    <string>Play associated audio</string>
+   </property>
+   <property name="whatsThis">
+    <string>Play associated audio</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+B</string>
+   </property>
+  </action>
+  <action name="qaMarkLastCorrect">
+   <property name="icon">
+    <iconset resource="../wordquiz.qrc">
+     <normaloff>:/kwordquiz/pics/ox16-action-answer-correct.png</normaloff>:/kwordquiz/pics/ox16-action-answer-correct.png</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;Mark Last Correct</string>
+   </property>
+   <property name="statusTip">
+    <string>Marks last answer as correct</string>
+   </property>
+   <property name="whatsThis">
+    <string>Marks last answer as correct</string>
+   </property>
+   <property name="shortcut">
+    <string>Shift+Return</string>
+   </property>
+  </action>
+ </widget>
+ <resources>
+  <include location="../wordquiz.qrc"/>
+ </resources>
+ <connections/>
+</ui>
