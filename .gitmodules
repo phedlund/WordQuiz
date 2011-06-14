@@ -1,0 +1,6 @@
+[submodule "kwordquiz"]
+	path = kwordquiz
+	url = git://anongit.kde.org/kwordquiz
+[submodule "app/kwordquiz"]
+	path = app/kwordquiz
+	url = git://anongit.kde.org/kwordquiz
