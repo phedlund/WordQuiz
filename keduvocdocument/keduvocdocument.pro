@@ -27,8 +27,7 @@ HEADERS += src/keduvocarticle.h \
     src/kvtml2defs.h \
     src/kvtmldefs.h \
     src/libkeduvocdocument_export.h \
-    src/keduvocleitnerbox.h \
-    klocale.h
+    src/keduvocleitnerbox.h
 SOURCES += src/keduvocconjugation.cpp \
     src/keduvoccontainer.cpp \
     src/keduvoccsvreader.cpp \
@@ -60,5 +59,3 @@ CONFIG += staticlib
 DESTDIR = lib/
 OBJECTS_DIR = release/
 MOC_DIR = release/
-TRANSLATIONS = ts/keduvocdocument_fr.ts \
-    ts/keduvocdocument_se.ts

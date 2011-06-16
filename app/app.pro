@@ -1,31 +1,32 @@
 FORMS = ui/mainwindow.ui \
     ui/dlgconfig.ui \
     ui/dlgcharacter.ui \
-    kwordquiz/flashviewbase.ui \
-    kwordquiz/multipleviewbase.ui \
-    kwordquiz/qaviewbase.ui \
-    kwordquiz/kwqscorewidgetbase.ui \
+    kwordquiz/src/flashviewbase.ui \
+    kwordquiz/src/multipleviewbase.ui \
+    kwordquiz/src/qaviewbase.ui \
+    kwordquiz/src/kwqscorewidgetbase.ui \
     ui/dlglanguage.ui \
     ui/wqcleardialog.ui
 HEADERS = src/wordquiz.h \
     src/wqapplication.h \
     src/prefs.h \
     src/wordquizprefs.h \
-    kwordquiz/kwqtablemodel.h \
-    kwordquiz/kwqsortfiltermodel.h \
-    kwordquiz/kwqtableview.h \
-    kwordquiz/kwqtabledelegate.h \
-    kwordquiz/kwqcommands.h \
-    kwordquiz/flashview.h \
-    kwordquiz/multipleview.h \
-    kwordquiz/qaview.h \
-    kwordquiz/wqprintdialogpage.h \
-    kwordquiz/kwqquizmodel.h \
-    kwordquiz/kwqscorewidget.h \
-    kwordquiz/kwqcardscene.h \
-    kwordquiz/kwqcardview.h \
-    kwordquiz/kwqquizview.h \
-    kwordquiz/version.h \
+    kwordquiz/src/kwqtablemodel.h \
+    kwordquiz/src/kwqsortfiltermodel.h \
+    kwordquiz/src/kwqtableview.h \
+    kwordquiz/src/kwqtabledelegate.h \
+    kwordquiz/src/kwqcommands.h \
+    kwordquiz/src/flashview.h \
+    kwordquiz/src/multipleview.h \
+    kwordquiz/src/qaview.h \
+    kwordquiz/src/wqprintdialogpage.h \
+    kwordquiz/src/kwqquizmodel.h \
+    kwordquiz/src/kwqscorewidget.h \
+    kwordquiz/src/kwqcardscene.h \
+    kwordquiz/src/kwqcardview.h \
+    kwordquiz/src/kwqquizview.h \
+    kwordquiz/src/kwqpixmapitem.h \
+    kwordquiz/src/version.h \
     kdelibs/krandomsequence.h \
     kdelibs/krandom.h \
     kdelibs/kcolorbutton.h \
@@ -44,20 +45,21 @@ SOURCES = src/main.cpp \
     src/wqapplication.cpp \
     src/prefs.cpp \
     src/wordquizprefs.cpp \
-    kwordquiz/kwqtablemodel.cpp \
-    kwordquiz/kwqsortfiltermodel.cpp \
-    kwordquiz/kwqtableview.cpp \
-    kwordquiz/kwqtabledelegate.cpp \
-    kwordquiz/kwqcommands.cpp \
-    kwordquiz/flashview.cpp \
-    kwordquiz/multipleview.cpp \
-    kwordquiz/qaview.cpp \
-    kwordquiz/wqprintdialogpage.cpp \
-    kwordquiz/kwqquizmodel.cpp \
-    kwordquiz/kwqscorewidget.cpp \
-    kwordquiz/kwqcardscene.cpp \
-    kwordquiz/kwqcardview.cpp \
-    kwordquiz/kwqquizview.cpp \
+    kwordquiz/src/kwqtablemodel.cpp \
+    kwordquiz/src/kwqsortfiltermodel.cpp \
+    kwordquiz/src/kwqtableview.cpp \
+    kwordquiz/src/kwqtabledelegate.cpp \
+    kwordquiz/src/kwqcommands.cpp \
+    kwordquiz/src/flashview.cpp \
+    kwordquiz/src/multipleview.cpp \
+    kwordquiz/src/qaview.cpp \
+    kwordquiz/src/wqprintdialogpage.cpp \
+    kwordquiz/src/kwqquizmodel.cpp \
+    kwordquiz/src/kwqscorewidget.cpp \
+    kwordquiz/src/kwqcardscene.cpp \
+    kwordquiz/src/kwqcardview.cpp \
+    kwordquiz/src/kwqquizview.cpp \
+    kwordquiz/src/kwqpixmapitem.cpp \
     kdelibs/krandomsequence.cpp \
     kdelibs/krandom.cpp \
     kdelibs/kcolorbutton.cpp \
@@ -108,7 +110,7 @@ UI_DIR = build/ui
 MOC_DIR = build/moc
 RCC_DIR = build/rcc
 INCLUDEPATH = src/ \
-    kwordquiz/ \
+    kwordquiz/src/ \
     kdelibs/ \
     qt/ \
     ../keduvocdocument/src/
