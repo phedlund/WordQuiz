@@ -397,7 +397,7 @@ void WQApplication::slotAbout() {
                      "<p>Published under the GNU General Public License</p></html>").arg(WQ_VERSION).arg(WQ_COPYRIGHT_STR));
   about.addButton(QMessageBox::Ok);
   about.setEscapeButton(QMessageBox::Ok);
-  about.setIconPixmap(QPixmap(":/kwordquiz/icons/hi32-app-kwordquiz.png"));
+  about.setIconPixmap(QPixmap(":/kwordquiz/src/icons/hi32-app-kwordquiz.png"));
   about.exec();
 }
 
@@ -413,7 +413,7 @@ void WQApplication::slotUpgradeToKWordQuiz()
                      "for a more integrated experience.</p></html>"));
   about.addButton(QMessageBox::Ok);
   about.setEscapeButton(QMessageBox::Ok);
-  about.setIconPixmap(QPixmap(":/kwordquiz/icons/hi32-app-kwordquiz.png"));
+  about.setIconPixmap(QPixmap(":/kwordquiz/src/icons/hi32-app-kwordquiz.png"));
   about.exec();
 }
 

@@ -16,7 +16,7 @@
    <string>Select Character</string>
   </property>
   <property name="windowIcon" >
-   <iconset resource="../wordquiz.qrc" >:/kwordquiz/icons/hi16-app-kwordquiz.png</iconset>
+   <iconset resource="../wordquiz.qrc" >:/kwordquiz/src/icons/hi16-app-kwordquiz.png</iconset>
   </property>
   <layout class="QGridLayout" >
    <item row="0" column="0" >

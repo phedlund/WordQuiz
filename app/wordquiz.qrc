@@ -71,5 +71,8 @@
         <file>src/pics/audio-x-generic.png</file>
         <file>src/pics/image-x-generic.png</file>
         <file>src/pics/media-playback-start.png</file>
+        <file>src/sounds/correct.wav</file>
+        <file>src/sounds/error.wav</file>
+        <file>src/sounds/syntax_error.wav</file>
     </qresource>
 </RCC>

@@ -18,7 +18,7 @@
   </property>
   <property name="windowIcon">
    <iconset resource="../wordquiz.qrc">
-    <normaloff>:/kwordquiz/icons/hi16-app-kwordquiz.png</normaloff>:/kwordquiz/icons/hi16-app-kwordquiz.png</iconset>
+    <normaloff>:/kwordquiz/src/icons/hi16-app-kwordquiz.png</normaloff>:/kwordquiz/src/icons/hi16-app-kwordquiz.png</iconset>
   </property>
   <layout class="QGridLayout">
    <item row="0" column="0">
