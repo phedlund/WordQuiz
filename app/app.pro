@@ -115,7 +115,7 @@ INCLUDEPATH = src/ \
     kwordquiz/src/ \
     kdelibs/ \
     qt/ \
-    ../keduvocdocument/src/
-LIBS += ../keduvocdocument/lib/libkeduvocdocument.a
-DEPENDPATH = ../keduvocdocument/lib/
+    ../lib/src/
+LIBS += ../lib/lib/libkeduvocdocument.a
+DEPENDPATH = ../lib/lib/
 RESOURCES += wordquiz.qrc

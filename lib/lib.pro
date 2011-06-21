@@ -59,3 +59,4 @@ CONFIG += staticlib
 DESTDIR = lib/
 OBJECTS_DIR = release/
 MOC_DIR = release/
+TARGET = keduvocdocument

@@ -1,5 +1,5 @@
 TEMPLATE = subdirs
-SUBDIRS = keduvocdocument \
+SUBDIRS = lib \
           app
 
 CONFIG += ordered
