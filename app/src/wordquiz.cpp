@@ -48,6 +48,7 @@
 #include "kwqcommands.h"
 #include "wordquizprefs.h"
 #include "searchlineedit.h"
+#include "wqnotification.h"
 
 #ifdef Q_WS_WIN
   #include <windows.h>
@@ -70,6 +71,7 @@ WordQuizApp::WordQuizApp( QWidget * parent, Qt::WFlags f) : QMainWindow(parent, 
   initView();
 
   //qtport m_dirWatch = KDirWatch::self();
+  WQNotification::setup();
 
   QAction *a = m_modeActionGroup->actions()[Prefs::mode() - 1];
   slotModeActionGroupTriggered(a);

@@ -39,7 +39,8 @@ HEADERS = src/wordquiz.h \
     src/documentsettings.h \
     src/version.h \
     src/qfmacsearchbox.h \
-    src/wqcleardialog.h
+    src/wqcleardialog.h \
+    src/wqnotification.h
 SOURCES = src/main.cpp \
     src/wordquiz.cpp \
     src/wqapplication.cpp \
@@ -69,7 +70,8 @@ SOURCES = src/main.cpp \
     qt/searchlineedit.cpp \
     src/documentsettings.cpp \
     src/qfmacsearchbox.cpp \
-    src/wqcleardialog.cpp
+    src/wqcleardialog.cpp \
+    src/wqnotification.cpp
 macx { 
     TARGET = WordQuiz
     ICON = ../dist/mac/WordQuiz.icns
