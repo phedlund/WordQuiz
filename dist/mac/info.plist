@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+  <dict>
+    <key>CFBundleDevelopmentRegion</key>
+    <string>English</string>
+    <key>CFBundleDocumentTypes</key>
+    <array>
+      <dict>
+        <key>CFBundleTypeExtensions</key>
+        <array>
+          <string>kvtml</string>
+          <string>wql</string>
+        </array>
+        <key>CFBundleTypeIconFile</key>
+        <string>WordQuizDoc.icns</string>
+        <key>CFBundleTypeMIMETypes</key>
+        <array>
+          <string>text/plain</string>
+          <string>text/xml</string>
+          <string>text/xhtml</string>
+        </array>
+        <key>CFBundleTypeName</key>
+        <string>Vocabulary Document</string>
+        <key>CFBundleTypeRole</key>
+        <string>Editor</string>
+        <key>LSIsAppleDefaultForType</key>
+        <true/>
+      </dict>
+    </array>
+    <key>CFBundleExecutable</key>
+    <string>WordQuiz</string>
+    <key>CFBundleGetInfoString</key>
+    <string>WordQuiz (C) 1997-2010 Peter Hedlund</string>
+    <key>CFBundleIconFile</key>
+    <string>@ICON@</string>
+    <key>CFBundleIdentifier</key>
+    <string>peterandlinda.com</string>
+    <key>CFBundleName</key>
+    <string>WordQuiz</string>
+    <key>CFBundlePackageType</key>
+    <string>APPL</string>
+    <key>CFBundleShortVersionString</key>
+    <string>2010.12.10</string>
+    <key>CFBundleSignature</key>
+    <string>????</string>
+  </dict>
+</plist>

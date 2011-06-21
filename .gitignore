@@ -1,3 +1,7 @@
 *.pro.user
 .directory
 .DS_Store?
+wqsetup.exe
+dist/images
+dist/mac/WordQuiz
+*.dmg
