@@ -3,4 +3,4 @@
 	url = git@github.com:phedlund/kwordquiz.git
 [submodule "lib/libkdeedu"]
 	path = lib/libkdeedu
-	url = git://anongit.kde.org/libkdeedu.git
+	url = git@github.com:phedlund/libkdeedu.git
