@@ -78,7 +78,7 @@ macx {
     DOC_ICON.files = ../dist/mac/WordQuizDoc.icns
     DOC_ICON.path = Contents/Resources
     QMAKE_BUNDLE_DATA += DOC_ICON
-    SND_RES.files = bin/alert.wav bin/cancel.wav bin/scrbar.wav
+    SND_RES.files = src/sounds/correct.wav src/sounds/error.wav src/sounds/syntax_error.wav
     SND_RES.path = Contents/MacOS
     QMAKE_BUNDLE_DATA += SND_RES
     QMAKE_INFO_PLIST = ../dist/mac/info.plist

@@ -1,5 +1,6 @@
 #include "wqnotification.h"
 
+#include <QtCore/QCoreApplication>
 #include <QtCore/QStringList>
 #include <QtCore/QDir>
 #include <Phonon/MediaObject>
@@ -44,11 +45,11 @@ void WQNotification::event(const QString &eventId, const QString& text)
     QStringList sl = WQNotification::NotificationFileNames;
 
     if (eventId == "QuizCorrect")
-        fileName = sl[0];
+        fileName = QString("/correct.wav").prepend(QCoreApplication::applicationDirPath());
     if (eventId == "QuizError")
-        fileName = sl[1];
+        fileName = QString("/error.wav").prepend(QCoreApplication::applicationDirPath());
     if (eventId == "SyntaxError")
-        fileName = sl[2];
+        fileName = QString("/syntax_error.wav").prepend(QCoreApplication::applicationDirPath());
 
     Phonon::MediaObject *notification = Phonon::createPlayer(Phonon::NotificationCategory, Phonon::MediaSource(fileName));
     notification->play();
