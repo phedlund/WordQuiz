@@ -2,7 +2,6 @@
 ; http://www.lerstad.com/istool.htm
 
 #define QTDIR "C:\QtSDK\Desktop\Qt\4.7.3\mingw\bin"
-#define MINGWDIR "C:\QtSDK\mingw\bin"
 #define WQDIR "X:\Projects\WordQuiz"
 
 [Setup]
@@ -12,14 +11,17 @@
 
 [Files]
 ;Common
-Source: X:\Projects\WordQuiz-build-win\app\bin\WordQuiz.exe; DestDir: {app}\; DestName: WordQuiz.exe; 
+Source: X:\Projects\WordQuiz-build-win\app\bin\WordQuiz.exe; DestDir: {app}\; DestName: WordQuiz.exe;
+Source: {#WQDIR}\app\src\sounds\correct.wav; DestDir: {app}\; DestName: correct.wav; 
+Source: {#WQDIR}\app\src\sounds\error.wav; DestDir: {app}\; DestName: error.wav;
+Source: {#WQDIR}\app\src\sounds\syntax_error.wav; DestDir: {app}\; DestName: syntax_error.wav;
 Source: {#QTDIR}\QtCore4.dll; DestDir: {app}
 Source: {#QTDIR}\QtGui4.dll; DestDir: {app}
 Source: {#QTDIR}\QtXml4.dll; DestDir: {app}
 Source: {#QTDIR}\QtOpenGL4.dll; DestDir: {app}
 Source: {#QTDIR}\phonon4.dll; DestDir: {app}
 Source: {#QTDIR}\libgcc_s_dw2-1.dll; DestDir: {app}
-Source: {#MINGWDIR}\mingwm10.dll; DestDir: {app}
+Source: {#QTDIR}\mingwm10.dll; DestDir: {app}
 
 ;English
 Source: {#WQDIR}\app\kwordquiz\src\examples\fill_in_the_blank.kvtml; DestDir: {userappdata}\WordQuiz; Languages: English; Tasks: 
