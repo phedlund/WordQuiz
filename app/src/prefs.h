@@ -706,7 +706,64 @@ class Prefs /*: public KConfigSkeleton*/
     {
       return self()->mRecentFiles;
     }
-    
+
+    /**
+      Set The Last Open Directory
+    */
+    static
+    void setLastOpenDir( const QString & v )
+    {
+      if (!self()->isImmutable( QString::fromLatin1 ( "LastOpenDir" ) ))
+        self()->mLastOpenDir = v;
+    }
+
+    /**
+      Get The Last Open Directory
+    */
+    static
+    QString lastOpenDir()
+    {
+      return self()->mLastOpenDir;
+    }
+
+    /**
+      Set The Last Image Directory
+    */
+    static
+    void setLastImageDir( const QString & v )
+    {
+      if (!self()->isImmutable( QString::fromLatin1 ( "LastImageDir" ) ))
+        self()->mLastImageDir = v;
+    }
+
+    /**
+      Get The Last Image Directory
+    */
+    static
+    QString lastImageDir()
+    {
+      return self()->mLastImageDir;
+    }
+
+    /**
+      Set The Last Sound Directory
+    */
+    static
+    void setLastSoundDir( const QString & v )
+    {
+      if (!self()->isImmutable( QString::fromLatin1 ( "LastSoundDir" ) ))
+        self()->mLastSoundDir = v;
+    }
+
+    /**
+      Get The Last Sound Directory
+    */
+    static
+    QString lastSoundDir()
+    {
+      return self()->mLastSoundDir;
+    }
+
     void writePrefs();
 
   protected:
@@ -762,6 +819,9 @@ class Prefs /*: public KConfigSkeleton*/
     QPoint mMainWindowPosition;
     bool mShowStatusbar;
     QStringList mRecentFiles;
+    QString mLastOpenDir;
+    QString mLastImageDir;
+    QString mLastSoundDir;
   private:
 };
 

@@ -884,7 +884,7 @@ void WordQuizApp::slotFileOpen()
     QStringList temp = filter.split('|');
     qtFilters.append(QString(temp[1] + " (" + temp[0] + ");;"));
   }
-  QStringList files = QFileDialog::getOpenFileNames (this, tr("Open Vocabulary Document"), QString(), qtFilters); 
+  QStringList files = QFileDialog::getOpenFileNames (this, tr("Open Vocabulary Document"), Prefs::lastOpenDir(), qtFilters);
   if (!files.isEmpty())
   {
     QStringList l = files;
@@ -908,7 +908,8 @@ void WordQuizApp::slotFileOpen()
 
       foreach(const QString & file, files)
       {
-        openUrl(QUrl::fromLocalFile(file));
+          Prefs::setLastOpenDir(QFileInfo(file).path());
+          openUrl(QUrl::fromLocalFile(file));
       }
     }
   //}
@@ -1516,6 +1517,8 @@ void WordQuizApp::updateActions()
   editUnmarkBlank->setEnabled(fEdit && Prefs::enableBlanks());
   vocabLanguages->setEnabled(fEdit);
   vocabFont->setEnabled(fEdit);
+  vocabImage->setEnabled(fEdit);
+  vocabSound->setEnabled(fEdit);
   vocabAdjustRows->setEnabled(fEdit);
   vocabShuffle->setEnabled(fEdit);
 

@@ -4,6 +4,7 @@
 #include "prefs.h"
 
 //#include <kglobal.h>
+#include <QtCore/QDir>
 #include <QtCore/QFile>
 #include <QtCore/QSettings>
 #include <QtGui/QMessageBox>
@@ -43,6 +44,9 @@ Prefs::Prefs()
   mMainWindowPosition = prefs.value("MainWindowPosition", QPoint(50, 50)).toPoint();
   mShowStatusbar = prefs.value("ShowStatusbar", true).toBool();
   mRecentFiles = prefs.value("RecentFiles", QStringList()).toStringList();
+  mLastOpenDir = prefs.value("LastOpenDir", QDir::homePath()).toString();
+  mLastImageDir = prefs.value("LastImageDir", QDir::homePath()).toString();
+  mLastSoundDir = prefs.value("LastSoundDir", QDir::homePath()).toString();
   prefs.endGroup();
 
   prefs.beginGroup("Editor");
@@ -109,6 +113,9 @@ void Prefs::writePrefs()
   prefs.setValue("MainWindowPosition", mMainWindowPosition);
   prefs.setValue("ShowStatusbar", mShowStatusbar);
   prefs.setValue("RecentFiles", mRecentFiles);
+  prefs.setValue("LastOpenDir", mLastOpenDir);
+  prefs.setValue("LastImageDir", mLastImageDir);
+  prefs.setValue("LastSoundDir", mLastSoundDir);
   prefs.endGroup();
 
   prefs.beginGroup("Editor");

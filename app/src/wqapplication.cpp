@@ -429,10 +429,11 @@ void WQApplication::slotOpen() {
     QStringList temp = filter.split('|');
     qtFilters.append(QString(temp[1] + " (" + temp[0] + ");;"));
   }
-  QStringList files = QFileDialog::getOpenFileNames (0, tr("Open Vocabulary Document"), QString(), qtFilters); 
+  QStringList files = QFileDialog::getOpenFileNames (0, tr("Open Vocabulary Document"), Prefs::lastOpenDir(), qtFilters);
   if (!files.isEmpty())  {
     QStringList l = files;
     foreach(const QString & fileToOpen, files) {
+      Prefs::setLastOpenDir(QFileInfo(fileToOpen).path());
       WordQuizApp *win = new WordQuizApp();
       win->openDocumentFile(QUrl(fileToOpen));
       dockActivated();

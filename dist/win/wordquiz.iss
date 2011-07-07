@@ -1,7 +1,7 @@
 ; Script created by ISTool
 ; http://www.lerstad.com/istool.htm
 
-#define QTDIR "C:\QtSDK\Desktop\Qt\4.7.3\mingw\bin"
+#define QTDIR "C:\QtSDK\Desktop\Qt\4.7.3\mingw"
 #define WQDIR "X:\Projects\WordQuiz"
 
 [Setup]
@@ -12,16 +12,17 @@
 [Files]
 ;Common
 Source: X:\Projects\WordQuiz-build-win\app\bin\WordQuiz.exe; DestDir: {app}\; DestName: WordQuiz.exe;
-Source: {#WQDIR}\app\src\sounds\correct.wav; DestDir: {app}\; DestName: correct.wav; 
-Source: {#WQDIR}\app\src\sounds\error.wav; DestDir: {app}\; DestName: error.wav;
-Source: {#WQDIR}\app\src\sounds\syntax_error.wav; DestDir: {app}\; DestName: syntax_error.wav;
-Source: {#QTDIR}\QtCore4.dll; DestDir: {app}
-Source: {#QTDIR}\QtGui4.dll; DestDir: {app}
-Source: {#QTDIR}\QtXml4.dll; DestDir: {app}
-Source: {#QTDIR}\QtOpenGL4.dll; DestDir: {app}
-Source: {#QTDIR}\phonon4.dll; DestDir: {app}
-Source: {#QTDIR}\libgcc_s_dw2-1.dll; DestDir: {app}
-Source: {#QTDIR}\mingwm10.dll; DestDir: {app}
+Source: {#QTDIR}\bin\QtCore4.dll; DestDir: {app}
+Source: {#QTDIR}\bin\QtGui4.dll; DestDir: {app}
+Source: {#QTDIR}\bin\QtXml4.dll; DestDir: {app}
+Source: {#QTDIR}\bin\QtOpenGL4.dll; DestDir: {app}
+Source: {#QTDIR}\bin\phonon4.dll; DestDir: {app}
+Source: {#QTDIR}\bin\libgcc_s_dw2-1.dll; DestDir: {app}
+Source: {#QTDIR}\bin\mingwm10.dll; DestDir: {app}
+Source: {#QTDIR}\plugins\phonon_backend\phonon_ds94.dll; DestDir: {app}\phonon_backend; DestName: phonon_ds94.dll;
+Source: {#QTDIR}\plugins\imageformats\qjpeg4.dll; DestDir: {app}\imageformats; DestName: qjpeg4.dll;
+Source: {#QTDIR}\plugins\imageformats\qgif4.dll; DestDir: {app}\imageformats; DestName: qgif4.dll;
+Source: {#QTDIR}\plugins\imageformats\qtiff4.dll; DestDir: {app}\imageformats; DestName: qtiff4.dll;
 
 ;English
 Source: {#WQDIR}\app\kwordquiz\src\examples\fill_in_the_blank.kvtml; DestDir: {userappdata}\WordQuiz; Languages: English; Tasks: 

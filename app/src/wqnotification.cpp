@@ -45,11 +45,11 @@ void WQNotification::event(const QString &eventId, const QString& text)
     QStringList sl = WQNotification::NotificationFileNames;
 
     if (eventId == "QuizCorrect")
-        fileName = QString("/correct.wav").prepend(QCoreApplication::applicationDirPath());
+        fileName = sl[0];
     if (eventId == "QuizError")
-        fileName = QString("/error.wav").prepend(QCoreApplication::applicationDirPath());
+        fileName = sl[1];
     if (eventId == "SyntaxError")
-        fileName = QString("/syntax_error.wav").prepend(QCoreApplication::applicationDirPath());
+        fileName = sl[2];
 
     Phonon::MediaObject *notification = Phonon::createPlayer(Phonon::NotificationCategory, Phonon::MediaSource(fileName));
     notification->play();
