@@ -1,98 +1,98 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" ?>
 <XML_DIZ_INFO>
-    <MASTER_PAD_VERSION_INFO>
-        <MASTER_PAD_VERSION>3.10</MASTER_PAD_VERSION>
-        <MASTER_PAD_EDITOR>PAD Fab</MASTER_PAD_EDITOR>
-        <MASTER_PAD_INFO>Portable Application Description, or PAD for short, is a data set that is used by shareware authors to disseminate information to anyone interested in their software products. To find out more go to http://www.asp-shareware.org/pad</MASTER_PAD_INFO>
-    </MASTER_PAD_VERSION_INFO>
-    <Company_Info>
-        <Company_Name>Peter Hedlund</Company_Name>
-        <Address_1>12640 Torrey Bluff Drive</Address_1>
-        <Address_2>#4</Address_2>
-        <City_Town>San Diego</City_Town>
-        <State_Province>CA</State_Province>
-        <Zip_Postal_Code>92130</Zip_Postal_Code>
-        <Country>USA</Country>
-        <Company_WebSite_URL>http://peterandlinda.com</Company_WebSite_URL>
-        <Contact_Info>
-            <Author_First_Name>Peter</Author_First_Name>
-            <Author_Last_Name>Hedlund</Author_Last_Name>
-            <Author_Email>peter@peterandlinda.com</Author_Email>
-            <Contact_First_Name>Peter</Contact_First_Name>
-            <Contact_Last_Name>Hedlund</Contact_Last_Name>
-            <Contact_Email>peter@peterandlinda.com</Contact_Email>
-        </Contact_Info>
-        <Support_Info>
-            <Sales_Email>support@peterandlinda.com</Sales_Email>
-            <Support_Email>support@peterandlinda.com</Support_Email>
-            <General_Email>support@peterandlinda.com</General_Email>
-            <Sales_Phone></Sales_Phone>
-            <Support_Phone></Support_Phone>
-            <General_Phone></General_Phone>
-            <Fax_Phone></Fax_Phone>
-        </Support_Info>
-    </Company_Info>
-    <Program_Info>
-        <Program_Name>WordQuiz</Program_Name>
-        <Program_Version>2010.12.10</Program_Version>
-        <Program_Release_Month>12</Program_Release_Month>
-        <Program_Release_Day>10</Program_Release_Day>
-        <Program_Release_Year>2010</Program_Release_Year>
-        <Program_Cost_Dollars>0</Program_Cost_Dollars>
-        <Program_Cost_Other_Code></Program_Cost_Other_Code>
-        <Program_Cost_Other></Program_Cost_Other>
-        <Program_Type>Freeware</Program_Type>
-        <Program_Release_Status>Minor Update</Program_Release_Status>
-        <Program_Install_Support>Install and Uninstall</Program_Install_Support>
-        <Program_OS_Support>Mac OS X</Program_OS_Support>
-        <Program_Language>English</Program_Language>
-        <Program_Change_Info>Now free software based on the KDE version. Use images and sound.</Program_Change_Info>
-        <Program_Specific_Category>Education</Program_Specific_Category>
-        <Program_Category_Class>Education::Teaching &amp; Training Tools</Program_Category_Class>
-        <Program_System_Requirements></Program_System_Requirements>
-        <File_Info>
-            <File_Size_Bytes>18826959</File_Size_Bytes>
-            <File_Size_K>18385.70</File_Size_K>
-            <File_Size_MB>17.95</File_Size_MB>
-        </File_Info>
-        <Expire_Info>
-            <Has_Expire_Info>N</Has_Expire_Info>
-            <Expire_Count></Expire_Count>
-            <Expire_Based_On>Days</Expire_Based_On>
-            <Expire_Other_Info></Expire_Other_Info>
-            <Expire_Month></Expire_Month>
-            <Expire_Day></Expire_Day>
-            <Expire_Year></Expire_Year>
-        </Expire_Info>
-    </Program_Info>
-    <Program_Descriptions>
-        <English>
-            <Keywords>vocabulary, flashcard, flash card, quiz, education, language, foreign, school, college, university, terminology</Keywords>
-            <Char_Desc_45>The Vocabulary Learning Tool</Char_Desc_45>
-            <Char_Desc_80>A flashcard program for learning vocabulary and terminology</Char_Desc_80>
-            <Char_Desc_250>A tool for vocabulary learning. Build your own vocabulary documents and learn with flashcard, multiple choice or written quiz randomly or in order. Easy to edit and maintain vocabularies. Full Unicode support.</Char_Desc_250>
-            <Char_Desc_450>A powerful tool for vocabulary learning. Build your own vocabulary documents and use the flashcard, multiple choice, question and answer or fill-in-the-blank modes to practice the vocabularies. Have the quiz go through your vocabulary randomly or in order. If you wish, you can repeat any incorrect answers until you master all the words. You can get hints to the correct answer. The vocabulary documents are easy to edit and maintain.</Char_Desc_450>
-            <Char_Desc_2000>A powerful tool for vocabulary learning. Build your own vocabulary documents and use the flashcard, multiple choice, question and answer or fill-in-the-blank modes to practice the vocabularies. Have the quiz go through your vocabulary randomly or in order. If you wish, you can repeat any incorrect answers until you master all the words. You can get hints to the correct answer. The vocabulary documents are easy to edit and maintain with search and replace, sort, and shuffle functions. Print the vocabularies or a quiz on paper.</Char_Desc_2000>
-        </English>
-    </Program_Descriptions>
-    <Web_Info>
-        <Application_URLs>
-            <Application_Info_URL>http://peterandlinda.com/wordquiz/</Application_Info_URL>
-            <Application_Order_URL></Application_Order_URL>
-            <Application_Screenshot_URL>http://peterandlinda.com/images/wqscreenshotmac.png</Application_Screenshot_URL>
-            <Application_Icon_URL>http://peterandlinda.com/images/wqicon.png</Application_Icon_URL>
-            <Application_XML_File_URL>http://peterandlinda.com/download/wordquizmac.xml</Application_XML_File_URL>
-        </Application_URLs>
-        <Download_URLs>
-            <Primary_Download_URL>http://peterandlinda.com/download/WordQuiz.dmg</Primary_Download_URL>
-            <Secondary_Download_URL></Secondary_Download_URL>
-            <Additional_Download_URL_1></Additional_Download_URL_1>
-            <Additional_Download_URL_2></Additional_Download_URL_2>
-        </Download_URLs>
-    </Web_Info>
-    <Permissions>
-        <Distribution_Permissions></Distribution_Permissions>
-        <EULA>                    GNU GENERAL PUBLIC LICENSE
+	<MASTER_PAD_VERSION_INFO>
+		<MASTER_PAD_VERSION>3.11</MASTER_PAD_VERSION>
+		<MASTER_PAD_EDITOR>PADGen 3.1.1.45 http://www.padgen.org</MASTER_PAD_EDITOR>
+		<MASTER_PAD_INFO>Portable Application Description, or PAD for short, is a data set that is used by shareware authors to disseminate information to anyone interested in their software products. To find out more go to http://www.asp-shareware.org/pad</MASTER_PAD_INFO>
+	</MASTER_PAD_VERSION_INFO>
+	<Company_Info>
+		<Company_Name>Peter Hedlund</Company_Name>
+		<Address_1>12640 Torrey Bluff Drive</Address_1>
+		<Address_2>#4</Address_2>
+		<City_Town>San Diego</City_Town>
+		<State_Province>CA</State_Province>
+		<Zip_Postal_Code>92130</Zip_Postal_Code>
+		<Country>USA</Country>
+		<Company_WebSite_URL>http://peterandlinda.com</Company_WebSite_URL>
+		<Contact_Info>
+			<Author_First_Name>Peter</Author_First_Name>
+			<Author_Last_Name>Hedlund</Author_Last_Name>
+			<Author_Email>peter@peterandlinda.com</Author_Email>
+			<Contact_First_Name>Peter</Contact_First_Name>
+			<Contact_Last_Name>Hedlund</Contact_Last_Name>
+			<Contact_Email>peter@peterandlinda.com</Contact_Email>
+		</Contact_Info>
+		<Support_Info>
+			<Sales_Email>support@peterandlinda.com</Sales_Email>
+			<Support_Email>support@peterandlinda.com</Support_Email>
+			<General_Email>support@peterandlinda.com</General_Email>
+			<Sales_Phone />
+			<Support_Phone />
+			<General_Phone />
+			<Fax_Phone />
+		</Support_Info>
+	</Company_Info>
+	<Program_Info>
+		<Program_Name>WordQuiz</Program_Name>
+		<Program_Version>2011.07.07</Program_Version>
+		<Program_Release_Month>07</Program_Release_Month>
+		<Program_Release_Day>07</Program_Release_Day>
+		<Program_Release_Year>2011</Program_Release_Year>
+		<Program_Cost_Dollars>0</Program_Cost_Dollars>
+		<Program_Cost_Other_Code />
+		<Program_Cost_Other />
+		<Program_Type>Freeware</Program_Type>
+		<Program_Release_Status>Minor Update</Program_Release_Status>
+		<Program_Install_Support>Install and Uninstall</Program_Install_Support>
+		<Program_OS_Support>Mac OS X</Program_OS_Support>
+		<Program_Language>English</Program_Language>
+		<Program_Change_Info>Now free software based on the KDE version. Use images and sound.</Program_Change_Info>
+		<Program_Specific_Category>Education</Program_Specific_Category>
+		<Program_Category_Class>Education::Teaching &amp; Training Tools</Program_Category_Class>
+		<Program_System_Requirements />
+		<File_Info>
+			<File_Size_Bytes>25379010</File_Size_Bytes>
+			<File_Size_K>24784</File_Size_K>
+			<File_Size_MB>24.20</File_Size_MB>
+		</File_Info>
+		<Expire_Info>
+			<Has_Expire_Info>N</Has_Expire_Info>
+			<Expire_Count />
+			<Expire_Based_On>Days</Expire_Based_On>
+			<Expire_Other_Info />
+			<Expire_Month />
+			<Expire_Day />
+			<Expire_Year />
+		</Expire_Info>
+	</Program_Info>
+	<Program_Descriptions>
+		<English>
+			<Keywords>vocabulary, flashcard, flash card, quiz, education, language, foreign, school, college, university, terminology</Keywords>
+			<Char_Desc_45>The Vocabulary Learning Tool</Char_Desc_45>
+			<Char_Desc_80>A flashcard program for learning vocabulary and terminology</Char_Desc_80>
+			<Char_Desc_250>A tool for vocabulary learning. Build your own vocabulary documents and learn with flashcard, multiple choice or written quiz randomly or in order. Easy to edit and maintain vocabularies. Full Unicode support.</Char_Desc_250>
+			<Char_Desc_450>A powerful tool for vocabulary learning. Build your own vocabulary documents and use the flashcard, multiple choice, question and answer or fill-in-the-blank modes to practice the vocabularies. Have the quiz go through your vocabulary randomly or in order. If you wish, you can repeat any incorrect answers until you master all the words. You can get hints to the correct answer. The vocabulary documents are easy to edit and maintain.</Char_Desc_450>
+			<Char_Desc_2000>A powerful tool for vocabulary learning. Build your own vocabulary documents and use the flashcard, multiple choice, question and answer or fill-in-the-blank modes to practice the vocabularies. Have the quiz go through your vocabulary randomly or in order. If you wish, you can repeat any incorrect answers until you master all the words. You can get hints to the correct answer. The vocabulary documents are easy to edit and maintain with search and replace, sort, and shuffle functions. Print the vocabularies or a quiz on paper.</Char_Desc_2000>
+		</English>
+	</Program_Descriptions>
+	<Web_Info>
+		<Application_URLs>
+			<Application_Info_URL>http://peterandlinda.com/wordquiz/</Application_Info_URL>
+			<Application_Order_URL />
+			<Application_Screenshot_URL>http://peterandlinda.com/images/wqscreenshotmac.png</Application_Screenshot_URL>
+			<Application_Icon_URL>http://peterandlinda.com/images/wqicon.png</Application_Icon_URL>
+			<Application_XML_File_URL>http://peterandlinda.com/download/wordquizmac.xml</Application_XML_File_URL>
+		</Application_URLs>
+		<Download_URLs>
+			<Primary_Download_URL>http://peterandlinda.com/download/WordQuiz.dmg</Primary_Download_URL>
+			<Secondary_Download_URL />
+			<Additional_Download_URL_1 />
+			<Additional_Download_URL_2 />
+		</Download_URLs>
+	</Web_Info>
+	<Permissions>
+		<Distribution_Permissions />
+		<EULA>                    GNU GENERAL PUBLIC LICENSE
 
 
 
@@ -789,5 +789,15 @@ consider it more useful to permit linking proprietary applications with the
 library.  If this is what you want to do, use the GNU Library General
 
 Public License instead of this License.</EULA>
-    </Permissions>
+	</Permissions>
+	<PADmap>
+		<PADmap_FORM>Y</PADmap_FORM>
+		<PADmap_DESCRIPTION>Link to plain text file containing all your PAD URLs from current host</PADmap_DESCRIPTION>
+		<PADmap_VERSION>1.0</PADmap_VERSION>
+		<PADmap_URL>http://www.padmaps.org/padmap.htm</PADmap_URL>
+		<PADmap_SCOPE>Company</PADmap_SCOPE>
+		<PADmap_Location>http://peterandlinda.com/download/padmap.txt</PADmap_Location>
+		<PADmap_Location_REGEX>^http:\/\/.{2,120}\Z</PADmap_Location_REGEX>
+		<PADmap_Location_REGEX_DOCUMENTATION>URL http:// + 2-120 characters</PADmap_Location_REGEX_DOCUMENTATION>
+	</PADmap>
 </XML_DIZ_INFO>
