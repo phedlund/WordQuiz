@@ -86,7 +86,7 @@ macx {
     OBJECTS_DIR += build/o/mac
     CONFIG += app_bundle
 }
-unix { 
+unix:!macx {
     TARGET = wordquiz
     OBJECTS_DIR += build/o/unix
     target.path += /usr/bin/
