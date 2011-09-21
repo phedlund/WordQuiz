@@ -145,6 +145,7 @@ void QfMacSearchBox::clear (void)
     setText(QString());
 }
 */
+
 Spacer::Spacer(QWidget *parent) : QWidget(parent)
 {
     QSizePolicy sizePolicy(QSizePolicy::Expanding, QSizePolicy::Fixed);
@@ -160,7 +161,7 @@ QSize Spacer::sizeHint() const
 SearchWrapper::SearchWrapper(QWidget *parent) : QWidget(parent)
 {
     //m_searchBox = new QfMacSearchBox(this);
-    m_searchBox = new SearchLineEdit(this);
+    m_searchBox = new MacSearchField(this);
     m_searchBox->move(2,2);
     setFocusProxy(m_searchBox);
     setSizePolicy(QSizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed));

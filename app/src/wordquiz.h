@@ -33,7 +33,7 @@
 #include "ui_mainwindow.h"
 
 #ifdef Q_WS_MAC
-  #include "qfmacsearchbox.h"
+#include "macsearchwidgetcontainer.h"
 #endif
 
 class QLabel;

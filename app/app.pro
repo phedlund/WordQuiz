@@ -38,9 +38,10 @@ HEADERS = src/wordquiz.h \
     qt/proxystyle.h \
     src/documentsettings.h \
     src/version.h \
-    src/qfmacsearchbox.h \
     src/wqcleardialog.h \
-    src/wqnotification.h
+    src/wqnotification.h \
+    src/macsearchwidget.h \
+    src/macsearchwidgetcontainer.h
 SOURCES = src/main.cpp \
     src/wordquiz.cpp \
     src/wqapplication.cpp \
@@ -69,10 +70,11 @@ SOURCES = src/main.cpp \
     qt/lineedit.cpp \
     qt/searchlineedit.cpp \
     src/documentsettings.cpp \
-    src/qfmacsearchbox.cpp \
     src/wqcleardialog.cpp \
-    src/wqnotification.cpp
-macx { 
+    src/wqnotification.cpp \
+    src/macsearchwidgetcontainer.cpp
+macx {
+    QMAKE_MAC_SDK=/Developer/SDKs/MacOSX10.6.sdk
     TARGET = WordQuiz
     ICON = ../dist/mac/WordQuiz.icns
     DOC_ICON.files = ../dist/mac/WordQuizDoc.icns
@@ -82,9 +84,10 @@ macx {
     SND_RES.path = Contents/MacOS
     QMAKE_BUNDLE_DATA += SND_RES
     QMAKE_INFO_PLIST = ../dist/mac/info.plist
-    LIBS += -framework Carbon
+    LIBS += -framework Cocoa -framework IOKit -framework CoreFoundation -framework Foundation -framework Carbon
     OBJECTS_DIR += build/o/mac
     CONFIG += app_bundle
+    OBJECTIVE_SOURCES += src/macsearchwidget.mm
 }
 unix:!macx {
     TARGET = wordquiz

@@ -456,18 +456,25 @@ void WordQuizApp::initView()
 
   // Set the palette.
   QPalette palette = m_contentsWidget->palette();
-  QColor macSidebarColor(219, 222, 232);
-  QColor macSidebarColorInactive(237, 237, 237);
+  //QColor macSidebarColor(219, 222, 232);
+  //QColor macSidebarColorInactive(237, 237, 237);
   QColor macSidebarHighlightColor(83, 126, 201);
   QColor macSidebarHighlightColorInactive(158, 170, 202);
-  palette.setColor(QPalette::Active, QPalette::Base, macSidebarColor);
+
+  QLinearGradient activeGradient = QLinearGradient(0, 0, 0, 400);
+  activeGradient.setColorAt(0.0, QColor(233, 237, 242));
+  activeGradient.setColorAt(1.0, QColor(209, 216, 224));
+  palette.setBrush(QPalette::Active, QPalette::Base, QBrush(activeGradient));
   palette.setColor(QPalette::Active, QPalette::Highlight, macSidebarHighlightColor);
-  palette.setColor(QPalette::Inactive, QPalette::Base, macSidebarColorInactive);
+  QLinearGradient inactiveGradient = QLinearGradient(0, 0, 0, 400);
+  inactiveGradient.setColorAt(0.0, QColor(248, 248, 248));
+  inactiveGradient.setColorAt(1.0, QColor(235, 235, 235));
+  palette.setBrush(QPalette::Inactive, QPalette::Base, inactiveGradient);
   palette.setColor(QPalette::Inactive, QPalette::Highlight, macSidebarHighlightColorInactive);
   m_contentsWidget->setPalette(palette);
   m_contentsWidget->setFixedWidth(160);
   m_contentsWidget->setSpacing(0);
-  m_contentsWidget->setGridSize(QSize(20, 20));
+  m_contentsWidget->setGridSize(QSize(22, 22));
   toolBarMain->addWidget(new Spacer());
   m_searchWrapper = new SearchWrapper();
   toolBarMain->addWidget(m_searchWrapper);
@@ -824,7 +831,7 @@ void WordQuizApp::finishClose(int response) {
       if (m_doc->url().toString() == tr("Untitled")) {
         m_reallyClose = saveDocAsFileName(m_doc);
       } else {
-        m_reallyClose = (m_doc->saveAs(m_doc->url(), KEduVocDocument::Automatic, QString("kwordquiz %1").arg(WQ_VERSION)) == KEduVocDocument::NoError);
+        m_reallyClose = (m_doc->saveAs(m_doc->url(), KEduVocDocument::Automatic, QString("kwordquiz %1").arg(QCoreApplication::applicationVersion())) == KEduVocDocument::NoError);
       }
       break;
 
@@ -952,7 +959,7 @@ void WordQuizApp::slotFileSave()
   if (m_doc->url().toString() == tr("Untitled")) {
     success = saveDocAsFileName(m_doc);
   } else {
-    int saveStatus = m_doc->saveAs(m_doc->url(), KEduVocDocument::Automatic, QString("kwordquiz %1").arg(WQ_VERSION));
+    int saveStatus = m_doc->saveAs(m_doc->url(), KEduVocDocument::Automatic, QString("kwordquiz %1").arg(QCoreApplication::applicationVersion()));
     if (saveStatus == KEduVocDocument::NoError)
       success = true;
     else
@@ -1008,7 +1015,7 @@ bool WordQuizApp::saveDocAsFileName(KEduVocDocument *document)
           success = false; //export only, do not consider really saved
         }
         else {
-          result = document->saveAs(url, KEduVocDocument::Automatic, QString("kwordquiz %1").arg(WQ_VERSION));
+          result = document->saveAs(url, KEduVocDocument::Automatic, QString("kwordquiz %1").arg(QCoreApplication::applicationVersion()));
           if (result == KEduVocDocument::NoError) {
             addRecentFile(url.toLocalFile());
             success = true;
@@ -1016,7 +1023,7 @@ bool WordQuizApp::saveDocAsFileName(KEduVocDocument *document)
         }
 
         if (result != KEduVocDocument::NoError) {
-          QMessageBox::critical(this, tr("WordQuiz"), KEduVocDocument::errorDescription(result));
+          QMessageBox::critical(this, QCoreApplication::applicationName(), KEduVocDocument::errorDescription(result));
           success = false;
         }
       }

@@ -48,6 +48,7 @@ WQApplication::WQApplication(int & argc, char ** argv) : QApplication(argc, argv
   QCoreApplication::setOrganizationName("PHSoftware");
   QCoreApplication::setOrganizationDomain("peterandlinda.com");
   QCoreApplication::setApplicationName("WordQuiz");
+  QCoreApplication::setApplicationVersion(WQ_VERSION);
 
 #ifdef Q_WS_MAC
   setQuitOnLastWindowClosed(false);
@@ -394,7 +395,7 @@ void WQApplication::slotAbout() {
                      "<p>A powerful flashcard and vocabulary learning program</p>" \
                      "<p><a href='http://peterandlinda.com/wordquiz'>Home Page</a></p>" \
                      "<p>%2</p>" \
-                     "<p>Published under the GNU General Public License</p></html>").arg(WQ_VERSION).arg(WQ_COPYRIGHT_STR));
+                     "<p>Published under the GNU General Public License</p></html>").arg(applicationVersion()).arg(WQ_COPYRIGHT_STR));
   about.addButton(QMessageBox::Ok);
   about.setEscapeButton(QMessageBox::Ok);
   about.setIconPixmap(QPixmap(":/kwordquiz/src/icons/hi32-app-kwordquiz.png"));
