@@ -35,7 +35,6 @@ HEADERS = src/wordquiz.h \
     qt/lineedit_p.h \
     qt/lineedit.h \
     qt/searchlineedit.h \
-    qt/proxystyle.h \
     src/documentsettings.h \
     src/version.h \
     src/wqcleardialog.h \
