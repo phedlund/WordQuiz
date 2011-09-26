@@ -29,12 +29,9 @@
 #include "kwqtablemodel.h"
 #include "kwqsortfiltermodel.h"
 #include "version.h"
+#include "macsearchwidgetcontainer.h"
 
 #include "ui_mainwindow.h"
-
-#ifdef Q_WS_MAC
-#include "macsearchwidgetcontainer.h"
-#endif
 
 class QLabel;
 class QListWidget;
@@ -226,8 +223,6 @@ Q_OBJECT
     
     QListWidget *m_contentsWidget;
     QStackedWidget *m_pageWidget;
-    QLineEdit *m_searchLine;
-    QWidget *m_searchWidget;
     QUndoStack *m_undoStack;
     QWidget *m_editorView;
     QWidget *m_editorPage;
@@ -238,12 +233,6 @@ Q_OBJECT
     KWQQuizModel *m_quiz;
     QMessageBox *m_messageBox;
     bool m_reallyClose;
-#ifdef Q_WS_MAC
     SearchWrapper *m_searchWrapper;
-#endif
 };
 #endif
-
-
-
-

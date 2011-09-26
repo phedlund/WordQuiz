@@ -89,6 +89,9 @@ public:
 
 public slots:
     void textChanged(const QString &text);
+
+private:
+    bool m_active;
 };
 
 
@@ -99,6 +102,9 @@ class SearchLineEdit : public LineEdit
 
 public:
     SearchLineEdit(QWidget *parent = 0);
+
+    QSize sizeHint() const;
+    QSize minimumSizeHint() const;
 
     QString inactiveText() const;
     void setInactiveText(const QString &text);

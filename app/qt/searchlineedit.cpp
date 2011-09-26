@@ -74,16 +74,18 @@ ClearButton::ClearButton(QWidget *parent)
     : QAbstractButton(parent)
 {
     setCursor(Qt::ArrowCursor);
-    setToolTip(tr("Clear"));
-    setVisible(false);
+    //setToolTip(tr("Clear"));
+    //setVisible(false);
     setFocusPolicy(Qt::NoFocus);
     setMinimumSize(22, 22);
+    m_active = false;
 }
 
 void ClearButton::paintEvent(QPaintEvent *event)
 {
     Q_UNUSED(event);
     QPainter painter(this);
+    /*
     int height = this->height();
 
     painter.setRenderHint(QPainter::Antialiasing, true);
@@ -95,17 +97,24 @@ void ClearButton::paintEvent(QPaintEvent *event)
     int size = width();
     int offset = size / 5;
     int radius = size - offset * 2;
-    painter.drawEllipse(offset, offset, radius, radius);
+    */
+    if (m_active)
+        painter.drawPixmap(3, 3, 16, 16, QPixmap(":/src/pics/search-cancel.png"));
+    else
+        painter.drawPixmap(3, 3, 16, 16, QPixmap(":/src/pics/search.png"));
+    //painter.drawEllipse(offset, offset, radius, radius);
 
-    painter.setPen(palette().color(QPalette::Base));
-    int border = offset * 2;
-    painter.drawLine(border, border, width() - border, height - border);
-    painter.drawLine(border, height - border, width() - border, border);
+    //painter.setPen(palette().color(QPalette::Base));
+    //int border = offset * 2;
+    //painter.drawLine(border, border, width() - border, height - border);
+    //painter.drawLine(border, height - border, width() - border, border);
 }
 
 void ClearButton::textChanged(const QString &text)
 {
-    setVisible(!text.isEmpty());
+    //setVisible(!text.isEmpty());
+    m_active = !text.isEmpty();
+    //repaint();
 }
 
 /*
@@ -195,7 +204,8 @@ SearchLineEdit::SearchLineEdit(QWidget *parent)
     m_searchButton = new SearchButton(this);
     updateGeometries();
     addWidget(m_searchButton, LeftSide);
-    m_inactiveText = tr("Search");
+    m_searchButton->hide();
+    m_inactiveText = tr("");
 
     QSizePolicy policy = sizePolicy();
     setSizePolicy(QSizePolicy::Preferred, policy.verticalPolicy());
@@ -207,7 +217,7 @@ SearchLineEdit::SearchLineEdit(QWidget *parent)
     connect(this, SIGNAL(textChanged(const QString&)),
             m_clearButton, SLOT(textChanged(const QString&)));
     addWidget(m_clearButton, RightSide);
-    m_clearButton->hide();
+    //m_clearButton->hide();
     updateTextMargins();
     setUpdatesEnabled(true);
 }
@@ -219,11 +229,9 @@ void SearchLineEdit::paintEvent(QPaintEvent *event)
         QStyleOptionFrameV2 panel;
         initStyleOption(&panel);
         QRect textRect = style()->subElementRect(QStyle::SE_LineEditContents, &panel, this);
-#if QT_VERSION >= 0x040500
         int left = textMargin(LineEdit::LeftSide);
         int right = textMargin(LineEdit::RightSide);
         textRect.adjust(left, 0, -right, 0);
-#endif
         QPainter painter(this);
         painter.setPen(palette().brush(QPalette::Disabled, QPalette::Text).color());
         painter.drawText(textRect, Qt::AlignLeft | Qt::AlignVCenter, m_inactiveText);
@@ -247,6 +255,17 @@ void SearchLineEdit::updateGeometries()
     m_searchButton->setMinimumSize(QSize(menuWidth, menuHeight));
     m_searchButton->resize(menuWidth, menuHeight);
     updateTextMargins();
+}
+
+QSize SearchLineEdit::sizeHint() const
+{
+    QSize size = QLineEdit::sizeHint();
+    return QSize(200, size.height());
+}
+
+QSize SearchLineEdit::minimumSizeHint() const
+{
+    return QSize(200, sizeHint().height());
 }
 
 QString SearchLineEdit::inactiveText() const

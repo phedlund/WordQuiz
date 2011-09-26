@@ -475,10 +475,6 @@ void WordQuizApp::initView()
   m_contentsWidget->setFixedWidth(160);
   m_contentsWidget->setSpacing(0);
   m_contentsWidget->setGridSize(QSize(22, 22));
-  toolBarMain->addWidget(new Spacer());
-  m_searchWrapper = new SearchWrapper();
-  toolBarMain->addWidget(m_searchWrapper);
-  connect(m_searchWrapper->searchBox(), SIGNAL(textChanged(const QString&)), this, SLOT(slotEditFind(const QString&)));
 #else
   m_contentsWidget->setViewMode(QListView::IconMode);
   m_contentsWidget->setIconSize(QSize(96, 48));
@@ -489,6 +485,11 @@ void WordQuizApp::initView()
   m_contentsWidget->setSpacing(6);
 #endif
 
+  toolBarMain->addWidget(new Spacer());
+  m_searchWrapper = new SearchWrapper();
+  toolBarMain->addWidget(m_searchWrapper);
+  connect(m_searchWrapper->searchBox(), SIGNAL(textChanged(const QString&)), this, SLOT(slotEditFind(const QString&)));
+
   m_pageWidget = new QStackedWidget;
   
   QVBoxLayout *editorLayout = new QVBoxLayout();
@@ -496,19 +497,7 @@ void WordQuizApp::initView()
   editorLayout->setSpacing(0);
   editorLayout->setContentsMargins(0, 0, 0, 0);
 
-  m_searchLine = new SearchLineEdit(this);
-  m_searchLine->show();
-  m_searchLine->setFocusPolicy(Qt::ClickFocus);
-  connect(m_searchLine, SIGNAL(textChanged(const QString&)), this, SLOT(slotEditFind(const QString&)));
-
-  m_searchWidget = new QWidget(this);
-  QHBoxLayout* layout = new QHBoxLayout(m_searchWidget);
-  layout->setSpacing(0);
-  layout->setContentsMargins(0, 0, 0, 0);
-  layout->addWidget(m_searchLine);
-
   m_tableView = new KWQTableView(m_undoStack, this);
-  editorLayout->addWidget(m_searchWidget);
   editorLayout->addWidget(m_tableView);
   m_tableView->setModel(m_sortFilterModel);
   m_tableView->setColumnWidth(0, qvariant_cast<QSize>(m_tableModel->headerData(0, Qt::Horizontal, Qt::SizeHintRole)).width());
@@ -534,12 +523,9 @@ void WordQuizApp::initView()
   m_tableView->setContextMenuPolicy(Qt::ActionsContextMenu);
 
   connect(m_tableModel, SIGNAL(modelReset()), m_tableView, SLOT(slotModelReset()));
-
-  m_searchWidget->setVisible(Prefs::showSearch());
-  configShowSearchBar->setChecked(Prefs::showSearch());
+  configShowSearchBar->setVisible(false);
 
 #ifdef Q_WS_MAC
-  configShowSearchBar->setVisible(false);
   m_tableView->setFrameStyle(QFrame::NoFrame);
 #endif
 
@@ -1325,7 +1311,6 @@ void WordQuizApp::slotCurrentPageChanged(QListWidgetItem *current, QListWidgetIt
   
   if (row == 0) {
     m_tableView->setFocus();
-    m_searchWidget->setVisible(Prefs::showSearch());
   }
 
   else  if (row == 1) {
@@ -1543,18 +1528,12 @@ void WordQuizApp::updateActions()
 
   //addToolBar(Qt::RightToolBarArea, toolBar("quizToolBar"));
   toolBarQuiz->setHidden(fEdit);
-
-#ifdef Q_WS_MAC
   m_searchWrapper->searchBox()->setEnabled(fEdit);
-#endif
 }
 
 void WordQuizApp::slotConfigShowSearch()
 {
-  if (m_searchWidget) {
-    m_searchWidget->setVisible(m_searchWidget->isHidden());
-    Prefs::setShowSearch(m_searchWidget->isVisible());
-  }
+  //
 }
 
 void WordQuizApp::slotConfigShowStatusbar()

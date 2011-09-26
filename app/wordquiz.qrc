@@ -74,5 +74,7 @@
         <file>src/sounds/correct.wav</file>
         <file>src/sounds/error.wav</file>
         <file>src/sounds/syntax_error.wav</file>
+        <file>src/pics/search.png</file>
+        <file>src/pics/search-cancel.png</file>
     </qresource>
 </RCC>

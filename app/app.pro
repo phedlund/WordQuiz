@@ -40,7 +40,7 @@ HEADERS = src/wordquiz.h \
     src/wqcleardialog.h \
     src/wqnotification.h \
     src/macsearchwidget.h \
-    src/macsearchwidgetcontainer.h
+    src/searchwidgetcontainer.h
 SOURCES = src/main.cpp \
     src/wordquiz.cpp \
     src/wqapplication.cpp \
@@ -71,7 +71,7 @@ SOURCES = src/main.cpp \
     src/documentsettings.cpp \
     src/wqcleardialog.cpp \
     src/wqnotification.cpp \
-    src/macsearchwidgetcontainer.cpp
+    src/searchwidgetcontainer.cpp
 macx {
     QMAKE_MAC_SDK=/Developer/SDKs/MacOSX10.6.sdk
     TARGET = WordQuiz

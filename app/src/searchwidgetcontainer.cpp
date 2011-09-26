@@ -1,7 +1,5 @@
 
-#include "macsearchwidgetcontainer.h"
-
-#ifdef Q_WS_MAC
+#include "searchwidgetcontainer.h"
 
 Spacer::Spacer(QWidget *parent) : QWidget(parent)
 {
@@ -17,7 +15,11 @@ QSize Spacer::sizeHint() const
 
 SearchWrapper::SearchWrapper(QWidget *parent) : QWidget(parent)
 {
+#ifdef Q_WS_MAC
     m_searchBox = new MacSearchWidget(this);
+#else
+    m_searchBox = new SearchLineEdit(this);
+#endif
     m_searchBox->move(2, 2);
     setFocusProxy(m_searchBox);
     setSizePolicy(QSizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed));
@@ -33,5 +35,3 @@ QSize SearchWrapper::minimumSizeHint() const
 {
     return m_searchBox->minimumSizeHint() + QSize(12, 2);
 }
-
-#endif
