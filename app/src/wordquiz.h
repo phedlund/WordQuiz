@@ -29,7 +29,7 @@
 #include "kwqtablemodel.h"
 #include "kwqsortfiltermodel.h"
 #include "version.h"
-#include "macsearchwidgetcontainer.h"
+#include "searchwidgetcontainer.h"
 
 #include "ui_mainwindow.h"
 

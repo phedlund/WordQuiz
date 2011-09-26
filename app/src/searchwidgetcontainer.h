@@ -1,9 +1,7 @@
-#ifndef MACSEARCHWIDGETCONTAINER_H
-#define MACSEARCHWIDGETCONTAINER_H
+#ifndef SEARCHWIDGETCONTAINER_H
+#define SEARCHWIDGETCONTAINER_H
 
 #include <QtGui/QWidget>
-
-
 
 class Spacer : public QWidget
 {
@@ -35,7 +33,7 @@ private:
     SearchLineEdit *searchBox() {return m_searchBox;}
 private:
     SearchLineEdit *m_searchBox;
+#endif //Q_WS_MAC
 };
 
-#endif //Q_WS_MAC
-#endif //MACSEARCHWIDGETCONTAINER_H
+#endif //SEARCHWIDGETCONTAINER_H
