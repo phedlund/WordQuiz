@@ -99,9 +99,9 @@ void ClearButton::paintEvent(QPaintEvent *event)
     int radius = size - offset * 2;
     */
     if (m_active)
-        painter.drawPixmap(3, 3, 16, 16, QPixmap(":/src/pics/search-cancel.png"));
+        painter.drawPixmap(4, 4, 16, 16, QPixmap(":/src/pics/search-cancel.png"));
     else
-        painter.drawPixmap(3, 3, 16, 16, QPixmap(":/src/pics/search.png"));
+        painter.drawPixmap(4, 4, 16, 16, QPixmap(":/src/pics/search.png"));
     //painter.drawEllipse(offset, offset, radius, radius);
 
     //painter.setPen(palette().color(QPalette::Base));

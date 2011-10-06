@@ -121,3 +121,14 @@ INCLUDEPATH = src/ \
 LIBS += ../lib/lib/libkeduvocdocument.a
 DEPENDPATH = ../lib/lib/
 RESOURCES += wordquiz.qrc
+
+# Create our custom versioning target.
+win32:versioning.commands = $$PWD\..\dist\win\version.bat
+#else:svnbuild.commands = ../tools/build/updateBuildNumber.sh ../svnbuild.hx
+QMAKE_EXTRA_TARGETS += versioning
+
+# Hook our versioning target in between qmake's Makefile update and the actual project target.
+versioninghook.depends = versioning
+CONFIG(debug,debug|release):versioninghook.target = Makefile.Debug
+CONFIG(release,debug|release):versioninghook.target = Makefile.Release
+QMAKE_EXTRA_TARGETS += versioninghook
