@@ -29,6 +29,8 @@ BUILD_DIR ?= /Users/peter/Projects/WordQuiz-build-desktop/app/bin
 
 TEMPLATE_DMG ?= template.dmg
 
+QT_SDK ?= /Users/peter/QtSDK/Desktop/Qt/474/gcc/bin
+
 
 ################################################################################
 # DMG building. No editing should be needed beyond this point.
@@ -47,11 +49,11 @@ $(SOURCE_DIR)/LICENSE.GPL2.TXT : $(BASE_LIC)
 	cp $< $@
 	@echo
 
-$(SOURCE_DIR)/WordQuiz.app : $(BUILD_DIR)/wordquiz.app
+$(SOURCE_DIR)/WordQuiz.app : $(BUILD_DIR)/WordQuiz.app
 	@echo
 	@echo --------------------- Copying Application Bundle -------------------
 	cp -r $< $@
-	macdeployqt $@
+	$(QT_SDK)/macdeployqt $@
 	@echo
 
 $(TEMPLATE_DMG): $(TEMPLATE_DMG).bz2

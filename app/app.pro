@@ -124,7 +124,7 @@ RESOURCES += wordquiz.qrc
 
 # Create our custom versioning target.
 win32:versioning.commands = $$PWD\..\dist\win\version.bat
-#else:svnbuild.commands = ../tools/build/updateBuildNumber.sh ../svnbuild.hx
+else:versioning.commands = $$PWD/../dist/version.sh
 QMAKE_EXTRA_TARGETS += versioning
 
 # Hook our versioning target in between qmake's Makefile update and the actual project target.

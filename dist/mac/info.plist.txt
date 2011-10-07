@@ -31,7 +31,7 @@
     <key>CFBundleExecutable</key>
     <string>WordQuiz</string>
     <key>CFBundleGetInfoString</key>
-    <string>Copyright (C) 1997-2011 Peter B Hedlund</string>
+    <string>@WQ_COPYRIGHT@</string>
     <key>CFBundleIconFile</key>
     <string>@ICON@</string>
     <key>CFBundleIdentifier</key>
@@ -41,7 +41,7 @@
     <key>CFBundlePackageType</key>
     <string>APPL</string>
     <key>CFBundleShortVersionString</key>
-    <string>2011.10.06</string>
+    <string>@WQ_VERSION@</string>
     <key>CFBundleSignature</key>
     <string>????</string>
   </dict>
