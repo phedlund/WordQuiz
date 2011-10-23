@@ -2,6 +2,7 @@
 
 VFILE="/../app/src/version.h"
 PFILE="/mac/info.plist"
+AFILE="/mac/appcast.xml"
 GFILE="/LICENSE.GPL2"
 
 show_usage() {
@@ -46,6 +47,7 @@ fi
 WQ_VERSION_YEAR=$(date +"%Y")
 WQ_VERSION_MONTH=$(date +"%m")
 WQ_VERSION_DAY=$(date +"%d")
+WQ_PUB_DATE=$(date -u "+%a, %d %b %Y %X %z")
 
 MYDIR=`dirname $0`
 #echo $MYDIR
@@ -53,6 +55,7 @@ VERSIONFILE=$MYDIR$VFILE
 #echo $VERSIONFILE
 PLISTFILE=$MYDIR$PFILE
 GPLFILE=$MYDIR$GFILE
+APPCASTFILE=$MYDIR$AFILE
 
 write_version_h
 sed -i "" -e "3s/.*/WordQuiz is Copyright (C) 1997-$WQ_VERSION_YEAR Peter B Hedlund./" $GPLFILE
@@ -61,3 +64,8 @@ sed -i "" -e "3s/.*/WordQuiz is Copyright (C) 1997-$WQ_VERSION_YEAR Peter B Hedl
 cp $PLISTFILE.txt $PLISTFILE
 sed -i "" -e "s/\@WQ_COPYRIGHT@/Copyright (C) 1997-$WQ_VERSION_YEAR Peter B Hedlund/" $PLISTFILE
 sed -i "" -e "s/\@WQ_VERSION@/$WQ_VERSION_YEAR.$WQ_VERSION_MONTH.$WQ_VERSION_DAY/" $PLISTFILE
+
+#Update appcast.xml
+cp $APPCASTFILE.txt $APPCASTFILE
+sed -i "" -e "s/\@WQ_VERSION@/$WQ_VERSION_YEAR.$WQ_VERSION_MONTH.$WQ_VERSION_DAY/" $APPCASTFILE
+sed -i "" -e "s/\@WQ_PUB_DATE@/$WQ_PUB_DATE/" $APPCASTFILE

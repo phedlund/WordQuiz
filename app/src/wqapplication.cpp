@@ -62,11 +62,11 @@ WQApplication::WQApplication(int & argc, char ** argv) : QApplication(argc, argv
   QMenu *settingsMenu = appMenu->addMenu(tr("&Settings"));
   QMenu *helpMenu = appMenu->addMenu(tr("&Help"));
 
-  QAction *a = fileMenu->addAction("", this, SLOT(slotAbout()));
-  a->setMenuRole(QAction::AboutRole);
+  QAction *a = fileMenu->addAction("About WordQuiz", this, SLOT(slotAbout()));
+  a->setMenuRole(QAction::ApplicationSpecificRole);
 
-  a = fileMenu->addAction("", this, SLOT(aboutQt()));
-  a->setMenuRole(QAction::AboutQtRole);
+  a = fileMenu->addAction("About Qt...", this, SLOT(aboutQt()));
+  a->setMenuRole(QAction::ApplicationSpecificRole);
 
   a = fileMenu->addAction("", this, SLOT(slotPreferences()));
   a->setMenuRole(QAction::PreferencesRole);
@@ -192,6 +192,12 @@ WQApplication::WQApplication(int & argc, char ** argv) : QApplication(argc, argv
 
   a = helpMenu->addAction(QIcon(), tr("WordQuiz &Handbook"), this, SLOT(slotHelpHandbook()), QKeySequence(QKeySequence::HelpContents));
   a = helpMenu->addAction(QIcon(), tr("What's &This?"), this, SLOT(slotHelpWhatsThis()), QKeySequence(QKeySequence::WhatsThis));
+
+  //Should be moved Application menu when https://bugreports.qt.nokia.com/browse/QTBUG-13898 is fixed.
+  a = helpMenu->addAction(tr("Check for Updates..."), this, SLOT(slotCheckForUpdates()));
+  a->setShortcut(QKeySequence("CTRL+U"));
+  //a->setMenuRole(QAction::ApplicationSpecificRole);
+  helpMenu->addSeparator();
   //helpMenu->addSeparator();
   a = helpMenu->addAction(QIcon(), tr("&Report Bug..."), this, SLOT(slotUpgradeToKWordQuiz()), 0);
   a->setVisible(false);
@@ -201,6 +207,13 @@ WQApplication::WQApplication(int & argc, char ** argv) : QApplication(argc, argv
 
   updateRecentFileActions();
   setAttribute(Qt::AA_DontShowIconsInMenus);  // Icons are *no longer shown* in menus
+
+  AutoUpdater* updater;
+  CocoaInitializer initializer;
+  updater = new SparkleAutoUpdater("http://peterandlinda.com/download/appcast.xml");
+  if (updater) {
+    updater->checkForUpdatesInBackground();
+  }
 #endif
   connect(this, SIGNAL(lastWindowClosed()) , this, SLOT(slotLastWindowClosed()));
 }
@@ -474,4 +487,13 @@ void WQApplication::updateRecentFileActions()
   }
   for (int j = numRecentFiles; j < 10; ++j)
     m_recentFilesActionGroup->actions().at(j)->setVisible(false);
+}
+
+void WQApplication::slotCheckForUpdates()
+{
+    AutoUpdater* updater;
+    updater = new SparkleAutoUpdater("http://peterandlinda.com/download/appcast.xml");
+    if (updater) {
+      updater->checkForUpdates();
+    }
 }

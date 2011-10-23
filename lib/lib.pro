@@ -54,9 +54,8 @@ SOURCES += libkdeedu/keduvocdocument/keduvocconjugation.cpp \
     libkdeedu/keduvocdocument/keduvocleitnerbox.cpp
 QT += xml \
     core
-macx:LIBS += -framework Carbon
 CONFIG += staticlib
 DESTDIR = lib/
-OBJECTS_DIR = release/
-MOC_DIR = release/
+OBJECTS_DIR = build/o/
+MOC_DIR = build/moc/
 TARGET = keduvocdocument

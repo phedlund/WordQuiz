@@ -30,8 +30,6 @@
     </array>
     <key>CFBundleExecutable</key>
     <string>WordQuiz</string>
-    <key>CFBundleGetInfoString</key>
-    <string>Copyright (C) 1997-2011 Peter B Hedlund</string>
     <key>CFBundleIconFile</key>
     <string>@ICON@</string>
     <key>CFBundleIdentifier</key>
@@ -41,8 +39,16 @@
     <key>CFBundlePackageType</key>
     <string>APPL</string>
     <key>CFBundleShortVersionString</key>
-    <string>2011.10.06</string>
+    <string>2011.10.23</string>
+    <key>CFBundleVersion</key>
+    <string>2011.10.23</string>
     <key>CFBundleSignature</key>
     <string>????</string>
+	<key>SUFeedURL</key>
+	<string>http://peterandlinda.com/download/appcast.xml</string>
+	<key>SUEnableSystemProfiling</key>
+	<true/>
+	<key>SUPublicDSAKeyFile</key>
+	<string>dsa_pub.pem</string>
   </dict>
 </plist>

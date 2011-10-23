@@ -386,6 +386,10 @@ void WordQuizApp::initActions()
   helpAboutQt->setToolTip(helpAboutQt->whatsThis());
   helpAboutQt->setToolTip(helpAboutQt->whatsThis());
 
+  connect(helpCheckForUpdates, SIGNAL(triggered(bool)), wqApp, SLOT(slotCheckForUpdates()));
+  helpCheckForUpdates->setWhatsThis(tr("Check for updates"));
+  helpCheckForUpdates->setToolTip(helpCheckForUpdates->whatsThis());
+
   m_charActionGroup = new QActionGroup(this);
   m_charActionGroup->setExclusive(false);
   connect(m_charActionGroup, SIGNAL(triggered(QAction *)), this, SLOT(slotCharActionGroupTriggered(QAction *)));
@@ -461,12 +465,14 @@ void WordQuizApp::initView()
   QColor macSidebarHighlightColor(83, 126, 201);
   QColor macSidebarHighlightColorInactive(158, 170, 202);
 
-  QLinearGradient activeGradient = QLinearGradient(0, 0, 0, 400);
+  QLinearGradient activeGradient = QLinearGradient(0, 0, 0, 1);
+  activeGradient.setCoordinateMode(QGradient::ObjectBoundingMode);
   activeGradient.setColorAt(0.0, QColor(233, 237, 242));
   activeGradient.setColorAt(1.0, QColor(209, 216, 224));
   palette.setBrush(QPalette::Active, QPalette::Base, QBrush(activeGradient));
   palette.setColor(QPalette::Active, QPalette::Highlight, macSidebarHighlightColor);
-  QLinearGradient inactiveGradient = QLinearGradient(0, 0, 0, 400);
+  QLinearGradient inactiveGradient = QLinearGradient(0, 0, 0, 1);
+  inactiveGradient.setCoordinateMode(QGradient::ObjectBoundingMode);
   inactiveGradient.setColorAt(0.0, QColor(248, 248, 248));
   inactiveGradient.setColorAt(1.0, QColor(235, 235, 235));
   palette.setBrush(QPalette::Inactive, QPalette::Base, inactiveGradient);

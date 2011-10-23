@@ -88,6 +88,7 @@ $(MASTER_DMG): $(WC_DMG) $(addprefix $(SOURCE_DIR)/,$(SOURCE_FILES))
 	hdiutil convert "$(WC_DMG)" -quiet -format UDZO -imagekey zlib-level=9 -o "$@"
 	rm -rf $(WC_DIR)
 	@echo
+	@echo ------------ Remember to sign and update appcast --------------
 
 .PHONY: clean
 clean:

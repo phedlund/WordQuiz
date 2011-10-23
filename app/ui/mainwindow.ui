@@ -26,7 +26,7 @@
      <x>0</x>
      <y>0</y>
      <width>407</width>
-     <height>25</height>
+     <height>22</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuFile">
@@ -100,6 +100,7 @@
     <addaction name="separator"/>
     <addaction name="helpAboutWordQuiz"/>
     <addaction name="helpAboutQt"/>
+    <addaction name="helpCheckForUpdates"/>
    </widget>
    <widget class="QMenu" name="menuVocabulary">
     <property name="title">
@@ -667,7 +668,10 @@
      <normaloff>:/kwordquiz/src/icons/hi16-app-kwordquiz.png</normaloff>:/kwordquiz/src/icons/hi16-app-kwordquiz.png</iconset>
    </property>
    <property name="text">
-    <string>&amp;About WordQuiz...</string>
+    <string>&amp;About WordQuiz</string>
+   </property>
+   <property name="menuRole">
+    <enum>QAction::AboutRole</enum>
    </property>
   </action>
   <action name="helpAboutQt">
@@ -829,6 +833,20 @@
    </property>
    <property name="shortcut">
     <string>Shift+Return</string>
+   </property>
+  </action>
+  <action name="helpCheckForUpdates">
+   <property name="text">
+    <string>Check for Updates...</string>
+   </property>
+   <property name="toolTip">
+    <string>Check for Updates</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+U</string>
+   </property>
+   <property name="menuRole">
+    <enum>QAction::NoRole</enum>
    </property>
   </action>
  </widget>

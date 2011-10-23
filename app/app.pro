@@ -40,7 +40,10 @@ HEADERS = src/wordquiz.h \
     src/wqcleardialog.h \
     src/wqnotification.h \
     src/macsearchwidget.h \
-    src/searchwidgetcontainer.h
+    src/searchwidgetcontainer.h \
+    src/SparkleAutoUpdater.h \
+    src/CocoaInitializer.h \
+    src/AutoUpdater.h
 SOURCES = src/main.cpp \
     src/wordquiz.cpp \
     src/wqapplication.cpp \
@@ -71,22 +74,28 @@ SOURCES = src/main.cpp \
     src/documentsettings.cpp \
     src/wqcleardialog.cpp \
     src/wqnotification.cpp \
-    src/searchwidgetcontainer.cpp
+    src/searchwidgetcontainer.cpp \
+    src/AutoUpdater.cpp
 macx {
     QMAKE_MAC_SDK=/Developer/SDKs/MacOSX10.6.sdk
     TARGET = WordQuiz
     ICON = ../dist/mac/WordQuiz.icns
-    DOC_ICON.files = ../dist/mac/WordQuizDoc.icns
+    DOC_ICON.files = ../dist/mac/WordQuizDoc.icns ../dist/mac/dsa_pub.pem
     DOC_ICON.path = Contents/Resources
     QMAKE_BUNDLE_DATA += DOC_ICON
     SND_RES.files = src/sounds/correct.wav src/sounds/error.wav src/sounds/syntax_error.wav
     SND_RES.path = Contents/MacOS
     QMAKE_BUNDLE_DATA += SND_RES
+    SPARKLE.files = /Library/Frameworks/Sparkle.framework
+    SPARKLE.path = Contents/Frameworks
+    QMAKE_BUNDLE_DATA += SPARKLE
     QMAKE_INFO_PLIST = ../dist/mac/info.plist
-    LIBS += -framework Cocoa -framework IOKit -framework CoreFoundation -framework Foundation -framework Carbon
+    LIBS += -framework Cocoa -framework IOKit -framework CoreFoundation -framework Foundation -framework Carbon -framework Sparkle
     OBJECTS_DIR += build/o/mac
     CONFIG += app_bundle
-    OBJECTIVE_SOURCES += src/macsearchwidget.mm
+    OBJECTIVE_SOURCES += src/macsearchwidget.mm \
+    src/SparkleAutoUpdater.mm \
+    src/CocoaInitializer.mm
 }
 unix:!macx {
     TARGET = wordquiz

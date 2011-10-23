@@ -23,6 +23,11 @@
 #include <QtGui/QApplication>
 #include <QtGui/QActionGroup>
 
+#ifdef Q_WS_MAC
+#include "CocoaInitializer.h"
+#include "SparkleAutoUpdater.h"
+#endif
+
 #define wqApp (static_cast<WQApplication*>(QCoreApplication::instance()))
 
 class WQApplication : public QApplication
@@ -45,6 +50,7 @@ public:
 public slots:
   void slotLastWindowClosed();
   void slotPreferences();
+  void slotCheckForUpdates();
   void slotAbout();
   void slotNew();
   void slotOpen();

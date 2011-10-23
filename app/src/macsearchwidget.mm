@@ -48,7 +48,7 @@ void emit_text_accepted(MacSearchWidget *field)
 MacSearchWidget::MacSearchWidget(QWidget *parent) : QMacCocoaViewContainer(0, parent)
 {
     setSizePolicy(QSizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed));
-    NSAutoreleasePool* autoreleasePool = [[NSAutoreleasePool alloc] init];
+    //NSAutoreleasePool* autoreleasePool = [[NSAutoreleasePool alloc] init];
 
     searchField = [[MacSearchField alloc] initWithSearchField:this];
     setCocoaView(searchField);
@@ -56,7 +56,7 @@ MacSearchWidget::MacSearchWidget(QWidget *parent) : QMacCocoaViewContainer(0, pa
     [[searchField cell] setSendsSearchStringImmediately:true];
 
     [searchField release];
-    [autoreleasePool release];
+    //[autoreleasePool release];
 }
 
 QSize MacSearchWidget::sizeHint() const
