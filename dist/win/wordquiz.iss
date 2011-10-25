@@ -1,8 +1,9 @@
 ; Script created by ISTool
 ; http://www.lerstad.com/istool.htm
 
-#define QTDIR "C:\QtSDK\Desktop\Qt\4.7.3\mingw"
-#define WQDIR "X:\Projects\WordQuiz"
+#define QTDIR "C:\QtSDK\Desktop\Qt\4.7.4\mingw"
+#define WQDIR "C:\Projects\WordQuiz"
+#define SPARKLEDIR "C:\Projects\WinSparkle-0.3"
 
 [Setup]
 #include "iss_include.txt"
@@ -11,7 +12,7 @@
 
 [Files]
 ;Common
-Source: X:\Projects\WordQuiz-build-win\app\bin\WordQuiz.exe; DestDir: {app}\; DestName: WordQuiz.exe;
+Source: C:\Projects\WordQuiz-build-win\app\bin\WordQuiz.exe; DestDir: {app}\; DestName: WordQuiz.exe;
 Source: {#QTDIR}\bin\QtCore4.dll; DestDir: {app}
 Source: {#QTDIR}\bin\QtGui4.dll; DestDir: {app}
 Source: {#QTDIR}\bin\QtXml4.dll; DestDir: {app}
@@ -23,6 +24,7 @@ Source: {#QTDIR}\plugins\phonon_backend\phonon_ds94.dll; DestDir: {app}\phonon_b
 Source: {#QTDIR}\plugins\imageformats\qjpeg4.dll; DestDir: {app}\imageformats; DestName: qjpeg4.dll;
 Source: {#QTDIR}\plugins\imageformats\qgif4.dll; DestDir: {app}\imageformats; DestName: qgif4.dll;
 Source: {#QTDIR}\plugins\imageformats\qtiff4.dll; DestDir: {app}\imageformats; DestName: qtiff4.dll;
+Source: {#SPARKLEDIR}\WinSparkle.dll; DestDir: {app}
 
 ;English
 Source: {#WQDIR}\app\kwordquiz\src\examples\fill_in_the_blank.kvtml; DestDir: {userappdata}\WordQuiz; Languages: English; Tasks: 

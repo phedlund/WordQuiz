@@ -109,6 +109,8 @@ win32 {
     OBJECTS_DIR += build/o/win32
     RC_FILE = ../dist/win/WordQuiz.rc
     CONFIG -= debug_and_release
+    INCLUDEPATH += $$PWD/../../WinSparkle-0.3
+    LIBS += $$PWD/../../WinSparkle-0.3/WinSparkle.lib
 }
 TEMPLATE = app
 CONFIG += warn_on \
@@ -122,7 +124,7 @@ DESTDIR = bin
 UI_DIR = build/ui
 MOC_DIR = build/moc
 RCC_DIR = build/rcc
-INCLUDEPATH = src/ \
+INCLUDEPATH += src/ \
     kwordquiz/src/ \
     kdelibs/ \
     qt/ \
@@ -132,7 +134,7 @@ DEPENDPATH = ../lib/lib/
 RESOURCES += wordquiz.qrc
 
 # Create our custom versioning target.
-win32:versioning.commands = $$PWD\..\dist\win\version.bat
+win32:versioning.commands = $$PWD/../dist/win/version.bat
 else:versioning.commands = $$PWD/../dist/version.sh
 QMAKE_EXTRA_TARGETS += versioning
 

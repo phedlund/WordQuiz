@@ -14,7 +14,8 @@ for %%d in (%MYDIR2%) do set MYDIR3=%%~dpd
 
 set VERSIONFILE=%MYDIR3%app\src\version.h
 set GPLFILE=%MYDIR3%dist\LICENSE.GPL2
-set ISSFILE=%MYDIR3%\dist\win\iss_include.txt"
+set ISSFILE=%MYDIR3%\dist\win\iss_include.txt
+set APPCASTFILE=%MYDIR3%\dist\win\appcastwin.xml
 
 ::Generate version.h
 echo #ifndef WQ_VERSION > %VERSIONFILE%
@@ -70,3 +71,6 @@ echo VersionInfoDescription=WordQuiz Installer >> %ISSFILE%
 echo VersionInfoTextVersion=%WQ_VERSION_YEAR%.%WQ_VERSION_MONTH%.%WQ_VERSION_DAY% >> %ISSFILE%
 echo PrivilegesRequired=admin >> %ISSFILE%
 
+::Update appcastwin.xml
+copy %APPCASTFILE%.txt %APPCASTFILE% /Y
+sed -i "s/@WQ_VERSION@/%WQ_VERSION_YEAR%.%WQ_VERSION_MONTH%.%WQ_VERSION_DAY%.0/" %APPCASTFILE%

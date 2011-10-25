@@ -3,6 +3,8 @@
 IDI_ICON1               ICON    DISCARDABLE     "wordquiz.ico"
 IDI_ICON2               ICON    DISCARDABLE     "wordquiz-doc.ico"
 
+FeedURL                 APPCAST                {"http://peterandlinda.com/download/appcastwin.xml"}
+
 1 VERSIONINFO
  FILEVERSION WQ_FILEVERSION
  PRODUCTVERSION WQ_FILEVERSION

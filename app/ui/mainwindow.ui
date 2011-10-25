@@ -26,7 +26,7 @@
      <x>0</x>
      <y>0</y>
      <width>407</width>
-     <height>22</height>
+     <height>20</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuFile">
@@ -98,9 +98,10 @@
     <addaction name="separator"/>
     <addaction name="helpSwitchLanguage"/>
     <addaction name="separator"/>
+    <addaction name="helpCheckForUpdates"/>
+    <addaction name="separator"/>
     <addaction name="helpAboutWordQuiz"/>
     <addaction name="helpAboutQt"/>
-    <addaction name="helpCheckForUpdates"/>
    </widget>
    <widget class="QMenu" name="menuVocabulary">
     <property name="title">

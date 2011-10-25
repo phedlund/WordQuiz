@@ -38,6 +38,7 @@
 
 #ifdef Q_WS_WIN
   #include <windows.h>
+  #include "winsparkle.h"
 #endif
 #ifdef Q_WS_MAC
   #include <Carbon/Carbon.h>
@@ -215,6 +216,9 @@ WQApplication::WQApplication(int & argc, char ** argv) : QApplication(argc, argv
     updater->checkForUpdatesInBackground();
   }
 #endif
+#ifdef Q_WS_WIN
+    win_sparkle_init();
+#endif
   connect(this, SIGNAL(lastWindowClosed()) , this, SLOT(slotLastWindowClosed()));
 }
 
@@ -390,6 +394,9 @@ void WQApplication::slotLastWindowClosed() {
   updateRecentFileActions();
 #endif
   if (quitOnLastWindowClosed()) {
+#ifdef Q_WS_WIN
+    win_sparkle_cleanup();
+#endif
     quit();
   }
 }
@@ -491,9 +498,15 @@ void WQApplication::updateRecentFileActions()
 
 void WQApplication::slotCheckForUpdates()
 {
+#ifdef Q_WS_MAC
     AutoUpdater* updater;
     updater = new SparkleAutoUpdater("http://peterandlinda.com/download/appcast.xml");
     if (updater) {
       updater->checkForUpdates();
     }
+#endif
+
+#ifdef Q_WS_WIN
+    win_sparkle_check_update_with_ui();
+#endif
 }

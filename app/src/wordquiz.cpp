@@ -52,6 +52,7 @@
 
 #ifdef Q_WS_WIN
   #include <windows.h>
+  #include "winsparkle.h"
 #endif
 
 WordQuizApp::WordQuizApp( QWidget * parent, Qt::WFlags f) : QMainWindow(parent, f)
