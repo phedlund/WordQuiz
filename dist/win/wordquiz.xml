@@ -2,8 +2,8 @@
 <XML_DIZ_INFO>
 	<MASTER_PAD_VERSION_INFO>
 		<MASTER_PAD_VERSION>3.11</MASTER_PAD_VERSION>
-		<MASTER_PAD_EDITOR>PADGen 3.1.1.45 http://www.padgen.org</MASTER_PAD_EDITOR>
-		<MASTER_PAD_INFO>Portable Application Description, or PAD for short, is a data set that is used by shareware authors to disseminate information to anyone interested in their software products. To find out more go to http://www.asp-shareware.org/pad</MASTER_PAD_INFO>
+		<MASTER_PAD_EDITOR>PADGen 3.1.1.47 http://www.padgen.org</MASTER_PAD_EDITOR>
+		<MASTER_PAD_INFO>Portable Application Description, or PAD for short, is a data set that is used by shareware authors to disseminate information to anyone interested in their software products. To find out more go to http://pad.asp-software.org</MASTER_PAD_INFO>
 	</MASTER_PAD_VERSION_INFO>
 	<Company_Info>
 		<Company_Name>Peter Hedlund</Company_Name>
@@ -34,9 +34,9 @@
 	</Company_Info>
 	<Program_Info>
 		<Program_Name>WordQuiz</Program_Name>
-		<Program_Version>2011.07.07</Program_Version>
-		<Program_Release_Month>07</Program_Release_Month>
-		<Program_Release_Day>07</Program_Release_Day>
+		<Program_Version>2011.11.23</Program_Version>
+		<Program_Release_Month>11</Program_Release_Month>
+		<Program_Release_Day>23</Program_Release_Day>
 		<Program_Release_Year>2011</Program_Release_Year>
 		<Program_Cost_Dollars>0</Program_Cost_Dollars>
 		<Program_Cost_Other_Code />
@@ -46,9 +46,9 @@
 		<Program_Install_Support>Install and Uninstall</Program_Install_Support>
 		<Program_OS_Support>Win7 x32,Win7 x64,WinVista,WinVista x64,WinXP</Program_OS_Support>
 		<Program_Language>English</Program_Language>
-		<Program_Change_Info>Improved handling of images on flashcards.</Program_Change_Info>
+		<Program_Change_Info>New search field. Automatic update checks.</Program_Change_Info>
 		<Program_Specific_Category>Education</Program_Specific_Category>
-		<Program_Category_Class>Education::Teaching &amp; Training Tools</Program_Category_Class>
+		<Program_Category_Class>Education::Languages</Program_Category_Class>
 		<Program_System_Requirements />
 		<File_Info>
 			<File_Size_Bytes>5058277</File_Size_Bytes>
@@ -794,14 +794,4 @@ Public License instead of this License.
 
 </EULA>
 	</Permissions>
-	<PADmap>
-		<PADmap_FORM>Y</PADmap_FORM>
-		<PADmap_DESCRIPTION>Link to plain text file containing all your PAD URLs from current host</PADmap_DESCRIPTION>
-		<PADmap_VERSION>1.0</PADmap_VERSION>
-		<PADmap_URL>http://www.padmaps.org/padmap.htm</PADmap_URL>
-		<PADmap_SCOPE>Company</PADmap_SCOPE>
-		<PADmap_Location>http://peterandlinda.com/download/padmap.txt</PADmap_Location>
-		<PADmap_Location_REGEX>^http:\/\/.{2,120}\Z</PADmap_Location_REGEX>
-		<PADmap_Location_REGEX_DOCUMENTATION>URL http:// + 2-120 characters</PADmap_Location_REGEX_DOCUMENTATION>
-	</PADmap>
 </XML_DIZ_INFO>

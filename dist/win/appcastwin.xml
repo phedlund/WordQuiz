@@ -6,13 +6,13 @@
       <description>Most recent changes with links to updates.</description>
       <language>en</language>
          <item>
-            <title>Version 2011.10.25.0</title>
+            <title>Version 2011.11.23.0</title>
             <sparkle:releaseNotesLink>
               http://peterandlinda.com
             </sparkle:releaseNotesLink>
             <pubDate>@WQ_PUB_DATE@</pubDate>
             <enclosure url="http://peterandlinda.com/download/wqsetup.exe"
-                       sparkle:version="2011.10.25.0" 
+                       sparkle:version="2011.11.23.0" 
                        sparkle:dsaSignature="@WQ_SIGNATURE@"
                        length="@WQ_LENGTH@"
                        type="application/octet-stream"/>
