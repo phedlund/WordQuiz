@@ -6,15 +6,15 @@
       <description>Most recent changes with links to updates.</description>
       <language>en</language>
          <item>
-            <title>Version 2011.10.23</title>
+            <title>Version 2011.11.23</title>
             <sparkle:releaseNotesLink>
               http://peterandlinda.com
             </sparkle:releaseNotesLink>
-            <pubDate>Sun, 23 Oct 2011 22:30:28 +0000</pubDate>
+            <pubDate>Wed, 23 Nov 2011 21:00:26 +0000</pubDate>
             <enclosure url="http://peterandlinda.com/download/WordQuiz.dmg" 
-                       sparkle:version="2011.10.23" 
-                       sparkle:dsaSignature="MC0CFQCqlsyA3Khr6AytCztFP79m1Hw2EwIUbM25nxNYOMJhfDNkcfI3LNUc6W4="
-                       length="39020561"
+                       sparkle:version="2011.11.23" 
+                       sparkle:dsaSignature="MC0CFQCnfItlx9xg9PjkX92qKSXtnKkALAIUTxexiLzHq0GOfhbKfdEVVVKLYh4="
+                       length="15512509"
                        type="application/octet-stream"/>
          </item>
    </channel>
