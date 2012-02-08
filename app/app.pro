@@ -134,12 +134,47 @@ DEPENDPATH = ../lib/lib/
 RESOURCES += wordquiz.qrc
 
 # Create our custom versioning target.
-win32:versioning.commands = $$PWD/../dist/win/version.bat
-else:versioning.commands = $$PWD/../dist/version.sh
-QMAKE_EXTRA_TARGETS += versioning
+#win32:versioning.commands = $$PWD/../dist/win/version.bat
+#else:versioning.commands = $$PWD/../dist/version.sh
+#QMAKE_EXTRA_TARGETS += versioning
 
 # Hook our versioning target in between qmake's Makefile update and the actual project target.
-versioninghook.depends = versioning
-CONFIG(debug,debug|release):versioninghook.target = Makefile.Debug
-CONFIG(release,debug|release):versioninghook.target = Makefile.Release
-QMAKE_EXTRA_TARGETS += versioninghook
+#versioninghook.depends = versioning
+#CONFIG(debug,debug|release):versioninghook.target = Makefile.Debug
+#CONFIG(release,debug|release):versioninghook.target = Makefile.Release
+#QMAKE_EXTRA_TARGETS += versioninghook
+
+WQ_VERSION_YEAR=$$system(date +"%Y")
+WQ_VERSION_MONTH=$$system(date +"%m")
+WQ_VERSION_DAY=$$system(date +"%d")
+WQ_PUB_DATE=$$system('date -u "+%a, %d %b %Y %X %z"')
+
+vers.input = $$PWD/src/version.h.in
+vers.output = $$PWD/src/version.h
+
+QMAKE_SUBSTITUTES += vers
+
+gpl.input = $$PWD/../dist/LICENSE.GPL2.in
+gpl.output = $$PWD/../dist/LICENSE.GPL2
+
+QMAKE_SUBSTITUTES += gpl
+
+plist.input = $$PWD/../dist/mac/info.plist.in
+plist.output = $$PWD/../dist/mac/info.plist
+
+QMAKE_SUBSTITUTES += plist
+
+sparkle.input = $$PWD/../dist/mac/appcast.xml.in
+sparkle.output = $$PWD/../dist/mac/appcast.xml
+
+QMAKE_SUBSTITUTES += sparkle
+
+winsparkle.input = $$PWD/../dist/win/appcastwin.xml.in
+winsparkle.output = $$PWD/../dist/win/appcastwin.xml
+
+QMAKE_SUBSTITUTES += winsparkle
+
+iss.input = $$PWD/../dist/win/iss_include.txt.in
+iss.output = $$PWD/../dist/win/iss_include.txt
+
+QMAKE_SUBSTITUTES += iss

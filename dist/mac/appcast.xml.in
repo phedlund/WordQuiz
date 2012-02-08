@@ -1,21 +1,21 @@
-<?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle"  xmlns:dc="http://purl.org/dc/elements/1.1/">
+<?xml version=\"1.0\" encoding=\"utf-8\"?>
+<rss version=\"2.0\" xmlns:sparkle=\"http://www.andymatuschak.org/xml-namespaces/sparkle\"  xmlns:dc=\"http://purl.org/dc/elements/1.1/\">
    <channel>
       <title>WordQuiz ChangeLog</title>
       <link>http://peterandlinda.com/download/appcast.xml</link>
       <description>Most recent changes with links to updates.</description>
       <language>en</language>
          <item>
-            <title>Version @WQ_VERSION@</title>
+            <title>Version $$WQ_VERSION_YEAR'.'$$WQ_VERSION_MONTH'.'$$WQ_VERSION_DAY</title>
             <sparkle:releaseNotesLink>
               http://peterandlinda.com
             </sparkle:releaseNotesLink>
-            <pubDate>@WQ_PUB_DATE@</pubDate>
-            <enclosure url="http://peterandlinda.com/download/WordQuiz.dmg" 
-                       sparkle:version="@WQ_VERSION@" 
-                       sparkle:dsaSignature="@WQ_SIGNATURE@"
-                       length="@WQ_LENGTH@"
-                       type="application/octet-stream"/>
+            <pubDate>$$WQ_PUB_DATE</pubDate>
+            <enclosure url=\"http://peterandlinda.com/download/WordQuiz.dmg\"
+                       sparkle:version=\"$$WQ_VERSION_YEAR'.'$$WQ_VERSION_MONTH'.'$$WQ_VERSION_DAY\"
+                       sparkle:dsaSignature=\"@WQ_SIGNATURE@\"
+                       length=\"@WQ_LENGTH@\"
+                       type=\"application/octet-stream\"/>
          </item>
    </channel>
 </rss>

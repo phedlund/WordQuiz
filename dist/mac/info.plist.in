@@ -1,6 +1,6 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-<plist version="1.0">
+<?xml version=\"1.0\" encoding=\"UTF-8\"?>
+<!DOCTYPE plist PUBLIC \"-//Apple//DTD PLIST 1.0//EN\" \"http://www.apple.com/DTDs/PropertyList-1.0.dtd\">
+<plist version=\"1.0\">
   <dict>
     <key>CFBundleDevelopmentRegion</key>
     <string>English</string>
@@ -39,9 +39,11 @@
     <key>CFBundlePackageType</key>
     <string>APPL</string>
     <key>CFBundleShortVersionString</key>
-    <string>@WQ_VERSION@</string>
+    <string>$$WQ_VERSION_YEAR'.'$$WQ_VERSION_MONTH'.'$$WQ_VERSION_DAY</string>
     <key>CFBundleVersion</key>
-    <string>@WQ_VERSION@</string>
+    <string>$$WQ_VERSION_YEAR'.'$$WQ_VERSION_MONTH'.'$$WQ_VERSION_DAY</string>
+    <key>NSHumanReadableCopyright</key>
+    <string>Copyright (C) 1997-$$WQ_VERSION_YEAR Peter B Hedlund</string>
     <key>CFBundleSignature</key>
     <string>????</string>
 	<key>SUFeedURL</key>
