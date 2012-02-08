@@ -133,21 +133,18 @@ LIBS += ../lib/lib/libkeduvocdocument.a
 DEPENDPATH = ../lib/lib/
 RESOURCES += wordquiz.qrc
 
-# Create our custom versioning target.
-#win32:versioning.commands = $$PWD/../dist/win/version.bat
-#else:versioning.commands = $$PWD/../dist/version.sh
-#QMAKE_EXTRA_TARGETS += versioning
-
-# Hook our versioning target in between qmake's Makefile update and the actual project target.
-#versioninghook.depends = versioning
-#CONFIG(debug,debug|release):versioninghook.target = Makefile.Debug
-#CONFIG(release,debug|release):versioninghook.target = Makefile.Release
-#QMAKE_EXTRA_TARGETS += versioninghook
-
-WQ_VERSION_YEAR=$$system(date +"%Y")
-WQ_VERSION_MONTH=$$system(date +"%m")
-WQ_VERSION_DAY=$$system(date +"%d")
-WQ_PUB_DATE=$$system('date -u "+%a, %d %b %Y %X %z"')
+win32 {
+    WQ_VERSION_YEAR=$$system(C:/Progra~1/GnuWin32/bin/date +"%Y")
+    WQ_VERSION_MONTH=$$system(C:/Progra~1/GnuWin32/bin/date +"%m")
+    WQ_VERSION_DAY=$$system(C:/Progra~1/GnuWin32/bin/date +"%d")
+    WQ_PUB_DATE=$$system('C:/Progra~1/GnuWin32/bin/date -u "+%a, %d %b %Y %X %z"')
+}
+unix {
+    WQ_VERSION_YEAR=$$system(date +"%Y")
+    WQ_VERSION_MONTH=$$system(date +"%m")
+    WQ_VERSION_DAY=$$system(date +"%d")
+    WQ_PUB_DATE=$$system('date -u "+%a, %d %b %Y %X %z"')
+}
 
 vers.input = $$PWD/src/version.h.in
 vers.output = $$PWD/src/version.h
