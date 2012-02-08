@@ -1,0 +1,8 @@
+#ifndef WQ_VERSION
+
+#define WQ_VERSION          \"$$WQ_VERSION_YEAR'.'$$WQ_VERSION_MONTH'.'$$WQ_VERSION_DAY\"
+#define WQ_FILEVERSION      $$WQ_VERSION_YEAR','$$WQ_VERSION_MONTH','$$WQ_VERSION_DAY',0'
+#define WQ_FILEVERSION_STR  \"$$WQ_VERSION_YEAR'.'$$WQ_VERSION_MONTH'.'$$WQ_VERSION_DAY'.0'\\0\"
+#define WQ_COPYRIGHT_STR    \"'Copyright (C) 1997-'$$WQ_VERSION_YEAR' Peter B Hedlund\\0'\"
+
+#endif
