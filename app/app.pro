@@ -43,7 +43,8 @@ HEADERS = src/wordquiz.h \
     src/searchwidgetcontainer.h \
     src/SparkleAutoUpdater.h \
     src/CocoaInitializer.h \
-    src/AutoUpdater.h
+    src/AutoUpdater.h \
+    src/wqmackeyboard.h
 SOURCES = src/main.cpp \
     src/wordquiz.cpp \
     src/wqapplication.cpp \
@@ -77,7 +78,7 @@ SOURCES = src/main.cpp \
     src/searchwidgetcontainer.cpp \
     src/AutoUpdater.cpp
 macx {
-    QMAKE_MAC_SDK=/Developer/SDKs/MacOSX10.6.sdk
+    QMAKE_MAC_SDK = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.6.sdk
     TARGET = WordQuiz
     ICON = ../dist/mac/WordQuiz.icns
     DOC_ICON.files = ../dist/mac/WordQuizDoc.icns ../dist/mac/dsa_pub.pem
@@ -95,7 +96,8 @@ macx {
     CONFIG += app_bundle
     OBJECTIVE_SOURCES += src/macsearchwidget.mm \
     src/SparkleAutoUpdater.mm \
-    src/CocoaInitializer.mm
+    src/CocoaInitializer.mm \
+    src/wqmackeyboard.mm
 }
 unix:!macx {
     TARGET = wordquiz
@@ -175,3 +177,4 @@ iss.input = $$PWD/../dist/win/iss_include.txt.in
 iss.output = $$PWD/../dist/win/iss_include.txt
 
 QMAKE_SUBSTITUTES += iss
+

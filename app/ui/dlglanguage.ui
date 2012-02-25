@@ -152,7 +152,7 @@
         <item>
          <widget class="QComboBox" name="column1LayoutComboBox">
           <property name="enabled">
-           <bool>false</bool>
+           <bool>true</bool>
           </property>
           <property name="toolTip">
            <string>Keyboard layout for the left column</string>
@@ -325,11 +325,7 @@
          </widget>
         </item>
         <item>
-         <widget class="QComboBox" name="column2LayoutComboBox">
-          <property name="enabled">
-           <bool>false</bool>
-          </property>
-         </widget>
+         <widget class="QComboBox" name="column2LayoutComboBox"/>
         </item>
         <item>
          <widget class="QSpinBox" name="column2WidthSpinBox">
