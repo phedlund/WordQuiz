@@ -50,6 +50,7 @@
 #include "searchlineedit.h"
 #include "wqnotification.h"
 #include "wqmackeyboard.h"
+#include "wqwinkeyboard.h"
 
 #ifdef Q_WS_WIN
   #include <windows.h>
@@ -1135,14 +1136,23 @@ void WordQuizApp::slotVocabLanguages()
   completer2->setCaseSensitivity(Qt::CaseInsensitive);
   ui.column2TitleLineEdit->setCompleter(completer2);
 
+  QStringList layouts;
 #ifdef Q_WS_MAC
-  QStringList layouts = WQMacKeyboard::availableLayouts();
-  ui.column1LayoutComboBox->addItems(layouts);
-  ui.column2LayoutComboBox->addItems(layouts);
-  ui.column1LayoutComboBox->setCurrentIndex(layouts.indexOf(m_tableModel->headerData(0, Qt::Horizontal, KWQTableModel::KeyboardLayoutRole).toString()));
-  ui.column2LayoutComboBox->setCurrentIndex(layouts.indexOf(m_tableModel->headerData(1, Qt::Horizontal, KWQTableModel::KeyboardLayoutRole).toString()));
+  layouts = WQMacKeyboard::availableLayouts();
+#elif defined(Q_WS_WIN)
+  layouts = WQWinKeyboard::availableLayouts();
 #endif
-
+  if (layouts.isEmpty()) {
+      ui.column1LayoutComboBox->setEnabled(false);
+      ui.column2LayoutComboBox->setEnabled(false);
+  } else {
+      ui.column1LayoutComboBox->setEnabled(true);
+      ui.column2LayoutComboBox->setEnabled(true);
+      ui.column1LayoutComboBox->addItems(layouts);
+      ui.column2LayoutComboBox->addItems(layouts);
+      ui.column1LayoutComboBox->setCurrentIndex(layouts.indexOf(m_tableModel->headerData(0, Qt::Horizontal, KWQTableModel::KeyboardLayoutRole).toString()));
+      ui.column2LayoutComboBox->setCurrentIndex(layouts.indexOf(m_tableModel->headerData(1, Qt::Horizontal, KWQTableModel::KeyboardLayoutRole).toString()));
+  }
   QSize s = m_tableModel->headerData(0, Qt::Horizontal, Qt::SizeHintRole).toSize();
   ui.column1WidthSpinBox->setValue(s.width());
 

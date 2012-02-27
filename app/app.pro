@@ -44,7 +44,8 @@ HEADERS = src/wordquiz.h \
     src/SparkleAutoUpdater.h \
     src/CocoaInitializer.h \
     src/AutoUpdater.h \
-    src/wqmackeyboard.h
+    src/wqmackeyboard.h \
+    src/wqwinkeyboard.h
 SOURCES = src/main.cpp \
     src/wordquiz.cpp \
     src/wqapplication.cpp \
@@ -76,7 +77,8 @@ SOURCES = src/main.cpp \
     src/wqcleardialog.cpp \
     src/wqnotification.cpp \
     src/searchwidgetcontainer.cpp \
-    src/AutoUpdater.cpp
+    src/AutoUpdater.cpp \
+    src/wqwinkeyboard.cpp
 macx {
     QMAKE_MAC_SDK = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.6.sdk
     TARGET = WordQuiz
