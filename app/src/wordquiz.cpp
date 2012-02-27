@@ -615,7 +615,7 @@ void WordQuizApp::createIcons()
 
   QListWidgetItem *editorButton = new QListWidgetItem(m_contentsWidget);
 #ifdef Q_WS_MAC
-  editorButton->setIcon(QIcon(":/kwordquiz/src/pics/ox16-action-editor.png"));
+  editorButton->setIcon(QIcon(":/kwordquiz/src/pics/hi16-action-editor.png"));
 #else
   editorButton->setIcon(QIcon(":/src/pics/list-action-editor.png"));
 #endif
@@ -625,7 +625,7 @@ void WordQuizApp::createIcons()
 
   QListWidgetItem *flashcardButton = new QListWidgetItem(m_contentsWidget);
 #ifdef Q_WS_MAC
-  flashcardButton->setIcon(QIcon(":/kwordquiz/src/pics/ox16-action-flash.png"));
+  flashcardButton->setIcon(QIcon(":/kwordquiz/src/pics/hi16-action-flash.png"));
 #else
   flashcardButton->setIcon(QIcon(":/src/pics/list-action-flash.png"));
 #endif
@@ -635,7 +635,7 @@ void WordQuizApp::createIcons()
 
   QListWidgetItem *multipleButton = new QListWidgetItem(m_contentsWidget);
 #ifdef Q_WS_MAC
-  multipleButton->setIcon(QIcon(":/kwordquiz/src/pics/ox16-action-multiple.png"));
+  multipleButton->setIcon(QIcon(":/kwordquiz/src/pics/hi16-action-multiple.png"));
   multipleButton->setText(tr("Multiple Choice"));
 #else
   multipleButton->setIcon(QIcon(":/src/pics/list-action-multiple.png"));
@@ -647,7 +647,7 @@ void WordQuizApp::createIcons()
   
   QListWidgetItem *qaButton = new QListWidgetItem(m_contentsWidget);
 #ifdef Q_WS_MAC
-  qaButton->setIcon(QIcon(":/kwordquiz/src/pics/ox16-action-qa.png"));
+  qaButton->setIcon(QIcon(":/kwordquiz/src/pics/hi16-action-qa.png"));
   qaButton->setText(tr("Question & Answer"));
 #else
   qaButton->setIcon(QIcon(":/src/pics/list-action-qa.png"));

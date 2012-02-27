@@ -379,7 +379,7 @@
   <action name="editInsert">
    <property name="icon">
     <iconset resource="../wordquiz.qrc">
-     <normaloff>:/kwordquiz/src/pics/ox16-action-insert-table-row.png</normaloff>:/kwordquiz/src/pics/ox16-action-insert-table-row.png</iconset>
+     <normaloff>:/kwordquiz/src/pics/hi16-action-insert-table-row.png</normaloff>:/kwordquiz/src/pics/hi16-action-insert-table-row.png</iconset>
    </property>
    <property name="text">
     <string>&amp;Insert Row</string>
@@ -391,7 +391,7 @@
   <action name="editDelete">
    <property name="icon">
     <iconset resource="../wordquiz.qrc">
-     <normaloff>:/kwordquiz/src/pics/ox16-action-delete-table-row.png</normaloff>:/kwordquiz/src/pics/ox16-action-delete-table-row.png</iconset>
+     <normaloff>:/kwordquiz/src/pics/hi16-action-delete-table-row.png</normaloff>:/kwordquiz/src/pics/hi16-action-delete-table-row.png</iconset>
    </property>
    <property name="text">
     <string>&amp;Delete Row</string>
@@ -403,7 +403,7 @@
   <action name="editMarkBlank">
    <property name="icon">
     <iconset resource="../wordquiz.qrc">
-     <normaloff>:/kwordquiz/src/pics/ox16-action-markasblank.png</normaloff>:/kwordquiz/src/pics/ox16-action-markasblank.png</iconset>
+     <normaloff>:/kwordquiz/src/pics/hi16-action-markasblank.png</normaloff>:/kwordquiz/src/pics/hi16-action-markasblank.png</iconset>
    </property>
    <property name="text">
     <string>&amp;Mark As Blank</string>
@@ -415,7 +415,7 @@
   <action name="editUnmarkBlank">
    <property name="icon">
     <iconset resource="../wordquiz.qrc">
-     <normaloff>:/kwordquiz/src/pics/ox16-action-unmarkasblank.png</normaloff>:/kwordquiz/src/pics/ox16-action-unmarkasblank.png</iconset>
+     <normaloff>:/kwordquiz/src/pics/hi16-action-unmarkasblank.png</normaloff>:/kwordquiz/src/pics/hi16-action-unmarkasblank.png</iconset>
    </property>
    <property name="text">
     <string>&amp;Unmark Blank</string>
@@ -424,7 +424,7 @@
   <action name="vocabLanguages">
    <property name="icon">
     <iconset resource="../wordquiz.qrc">
-     <normaloff>:/kwordquiz/src/pics/ox16-action-languages.png</normaloff>:/kwordquiz/src/pics/ox16-action-languages.png</iconset>
+     <normaloff>:/kwordquiz/src/pics/hi16-action-languages.png</normaloff>:/kwordquiz/src/pics/hi16-action-languages.png</iconset>
    </property>
    <property name="text">
     <string>&amp;Column Settings...</string>
@@ -459,7 +459,7 @@
   <action name="mode2">
    <property name="icon">
     <iconset resource="../wordquiz.qrc">
-     <normaloff>:/kwordquiz/src/pics/ox22-action-mode2.png</normaloff>:/kwordquiz/src/pics/ox22-action-mode2.png</iconset>
+     <normaloff>:/kwordquiz/src/pics/hi22-action-mode2.png</normaloff>:/kwordquiz/src/pics/hi22-action-mode2.png</iconset>
    </property>
    <property name="text">
     <string>&amp;2</string>
@@ -468,7 +468,7 @@
   <action name="mode3">
    <property name="icon">
     <iconset resource="../wordquiz.qrc">
-     <normaloff>:/kwordquiz/src/pics/ox22-action-mode3.png</normaloff>:/kwordquiz/src/pics/ox22-action-mode3.png</iconset>
+     <normaloff>:/kwordquiz/src/pics/hi22-action-mode3.png</normaloff>:/kwordquiz/src/pics/hi22-action-mode3.png</iconset>
    </property>
    <property name="text">
     <string>&amp;3</string>
@@ -477,7 +477,7 @@
   <action name="mode4">
    <property name="icon">
     <iconset resource="../wordquiz.qrc">
-     <normaloff>:/kwordquiz/src/pics/ox22-action-mode4.png</normaloff>:/kwordquiz/src/pics/ox22-action-mode4.png</iconset>
+     <normaloff>:/kwordquiz/src/pics/hi22-action-mode4.png</normaloff>:/kwordquiz/src/pics/hi22-action-mode4.png</iconset>
    </property>
    <property name="text">
     <string>&amp;4</string>
@@ -486,7 +486,7 @@
   <action name="mode5">
    <property name="icon">
     <iconset resource="../wordquiz.qrc">
-     <normaloff>:/kwordquiz/src/pics/ox22-action-mode5.png</normaloff>:/kwordquiz/src/pics/ox22-action-mode5.png</iconset>
+     <normaloff>:/kwordquiz/src/pics/hi22-action-mode5.png</normaloff>:/kwordquiz/src/pics/hi22-action-mode5.png</iconset>
    </property>
    <property name="text">
     <string>&amp;5</string>
@@ -495,7 +495,7 @@
   <action name="quizCheck">
    <property name="icon">
     <iconset resource="../wordquiz.qrc">
-     <normaloff>:/kwordquiz/src/pics/ox16-action-answer-correct.png</normaloff>:/kwordquiz/src/pics/ox16-action-answer-correct.png</iconset>
+     <normaloff>:/kwordquiz/src/pics/hi16-action-answer-correct.png</normaloff>:/kwordquiz/src/pics/hi16-action-answer-correct.png</iconset>
    </property>
    <property name="text">
     <string>&amp;Check</string>
@@ -690,7 +690,7 @@
   <action name="mode1">
    <property name="icon">
     <iconset resource="../wordquiz.qrc">
-     <normaloff>:/kwordquiz/src/pics/ox22-action-mode1.png</normaloff>:/kwordquiz/src/pics/ox22-action-mode1.png</iconset>
+     <normaloff>:/kwordquiz/src/pics/hi22-action-mode1.png</normaloff>:/kwordquiz/src/pics/hi22-action-mode1.png</iconset>
    </property>
    <property name="text">
     <string>&amp;1</string>
@@ -821,7 +821,7 @@
   <action name="qaMarkLastCorrect">
    <property name="icon">
     <iconset resource="../wordquiz.qrc">
-     <normaloff>:/kwordquiz/src/pics/ox16-action-answer-correct.png</normaloff>:/kwordquiz/src/pics/ox16-action-answer-correct.png</iconset>
+     <normaloff>:/kwordquiz/src/pics/hi16-action-answer-correct.png</normaloff>:/kwordquiz/src/pics/hi16-action-answer-correct.png</iconset>
    </property>
    <property name="text">
     <string>&amp;Mark Last Correct</string>

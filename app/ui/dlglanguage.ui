@@ -69,7 +69,7 @@
          <string>Enter a title (identifier) for the left column</string>
         </property>
         <property name="pixmap">
-         <pixmap resource="../wordquiz.qrc">:/kwordquiz/src/pics/ox32-action-question.png</pixmap>
+         <pixmap resource="../wordquiz.qrc">:/kwordquiz/src/pics/hi32-action-question.png</pixmap>
         </property>
         <property name="scaledContents">
          <bool>true</bool>
@@ -244,7 +244,7 @@
          <string>Enter a title (identifier) for the left column</string>
         </property>
         <property name="pixmap">
-         <pixmap resource="../wordquiz.qrc">:/kwordquiz/src/pics/ox32-action-answer.png</pixmap>
+         <pixmap resource="../wordquiz.qrc">:/kwordquiz/src/pics/hi32-action-answer.png</pixmap>
         </property>
         <property name="scaledContents">
          <bool>true</bool>

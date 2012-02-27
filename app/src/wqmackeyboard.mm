@@ -1,4 +1,3 @@
-#include <QDebug>
 #include <QtCore/QStringList>
 
 #include "wqmackeyboard.h"
@@ -34,7 +33,6 @@ QStringList WQMacKeyboard::availableLayouts()
     for (i = 0; i < [inputArray count]; ++i) {
         TISInputSourceRef current = (TISInputSourceRef)[inputArray objectAtIndex:i];
         currentName = (NSString *)TISGetInputSourceProperty(current, kTISPropertyLocalizedName);
-        qDebug() << [currentName UTF8String];
         result.append([currentName UTF8String]);
     }
     [inputArray release];
@@ -51,10 +49,8 @@ void WQMacKeyboard::selectLayout(const QString & layout)
     for (i = 0; i < [inputArray count]; ++i) {
         TISInputSourceRef current = (TISInputSourceRef)[inputArray objectAtIndex:i];
         currentName = (NSString *)TISGetInputSourceProperty(current, kTISPropertyLocalizedName);
-        qDebug() << [currentName UTF8String];
         if (layout == [currentName UTF8String])
             TISSelectInputSource (current);
-        qDebug() << currentLayout();
     }
     [inputArray release];
 #else
