@@ -44,8 +44,7 @@ HEADERS = src/wordquiz.h \
     src/SparkleAutoUpdater.h \
     src/CocoaInitializer.h \
     src/AutoUpdater.h \
-    src/wqmackeyboard.h \
-    src/wqwinkeyboard.h
+    src/kwqkeyboard.h
 SOURCES = src/main.cpp \
     src/wordquiz.cpp \
     src/wqapplication.cpp \
@@ -77,9 +76,9 @@ SOURCES = src/main.cpp \
     src/wqcleardialog.cpp \
     src/wqnotification.cpp \
     src/searchwidgetcontainer.cpp \
-    src/AutoUpdater.cpp \
-    src/wqwinkeyboard.cpp
+    src/AutoUpdater.cpp
 macx {
+    SOURCES += src/kwqkeyboard_mac.cpp
     QMAKE_MAC_SDK = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.6.sdk
     TARGET = WordQuiz
     ICON = ../dist/mac/WordQuiz.icns
@@ -98,17 +97,19 @@ macx {
     CONFIG += app_bundle
     OBJECTIVE_SOURCES += src/macsearchwidget.mm \
     src/SparkleAutoUpdater.mm \
-    src/CocoaInitializer.mm \
-    src/wqmackeyboard.mm
+    src/CocoaInitializer.mm
 }
 unix:!macx {
+    SOURCES += src/kwqkeyboard_x11.cpp
     TARGET = wordquiz
     OBJECTS_DIR += build/o/unix
     target.path += /usr/bin/
     INSTALLS += target
     QT += dbus
+    LIBS += -lX11
 }
 win32 { 
+    SOURCES += kwqkeyboard_win.cpp
     TARGET = WordQuiz
     OBJECTS_DIR += build/o/win32
     RC_FILE = ../dist/win/WordQuiz.rc

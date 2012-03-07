@@ -1,32 +1,24 @@
-#include <QtCore/QStringList>
+#include "kwqkeyboard.h"
 
-#include "wqmackeyboard.h"
-
-#ifdef Q_WS_MAC
 #import <Foundation/Foundation.h>
 #import <Carbon/Carbon.h>
-#endif
 
-WQMacKeyboard::WQMacKeyboard(QObject *parent) : QObject(parent)
+KWQKeyboard::KWQKeyboard()
 {
 }
 
-QString WQMacKeyboard::currentLayout()
+
+QString KWQKeyboard::currentLayout()
 {
-#ifdef Q_WS_MAC
     TISInputSourceRef current = TISCopyCurrentKeyboardLayoutInputSource();
     NSString *currentName = (NSString *)TISGetInputSourceProperty(current, kTISPropertyLocalizedName);
     CFRelease(current);
     return [currentName UTF8String];
-#else
-    return QString();
-#endif
 }
 
-QStringList WQMacKeyboard::availableLayouts()
+QStringList KWQKeyboard::availableLayouts()
 {
     QStringList result;
-#ifdef Q_WS_MAC
     NSArray  *inputArray = (NSArray *)TISCreateInputSourceList ( NULL, false);
     NSUInteger i;
     NSString *currentName;
@@ -36,13 +28,11 @@ QStringList WQMacKeyboard::availableLayouts()
         result.append([currentName UTF8String]);
     }
     [inputArray release];
-#endif
     return result;
 }
 
-void WQMacKeyboard::selectLayout(const QString & layout)
+void KWQKeyboard::selectLayout(const QString &layout)
 {
-#ifdef Q_WS_MAC
     NSArray  *inputArray = (NSArray *)TISCreateInputSourceList ( NULL, false);
     NSUInteger i;
     NSString *currentName;
@@ -53,7 +43,4 @@ void WQMacKeyboard::selectLayout(const QString & layout)
             TISSelectInputSource (current);
     }
     [inputArray release];
-#else
-    Q_UNUSED(layout);
-#endif
 }

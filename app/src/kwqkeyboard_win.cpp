@@ -1,27 +1,24 @@
-#include <QtCore/QStringList>
+#include "kwqkeyboard.h"
+
 #include <QtCore/QSettings>
 
-#include "wqwinkeyboard.h"
-
-#ifdef Q_WS_WIN
 #include <windows.h>
 #define PRELOAD_PATH "HKEY_CURRENT_USER\\Keyboard Layout\\Preload"
 #define LAYOUTS_PATH "HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Control\\Keyboard Layouts"
-#endif
 
-WQWinKeyboard::WQWinKeyboard(QObject *parent) : QObject(parent)
+KWQKeyboard::KWQKeyboard()
 {
 }
 
-QString WQWinKeyboard::currentLayout()
+
+QString KWQKeyboard::currentLayout()
 {
     return QString();
 }
 
-QStringList WQWinKeyboard::availableLayouts()
+QStringList KWQKeyboard::availableLayouts()
 {
     QStringList result;
-#ifdef Q_WS_WIN
     QSettings preload(PRELOAD_PATH, QSettings::NativeFormat);
     QSettings layouts(LAYOUTS_PATH, QSettings::NativeFormat);
     QStringList keys = preload.allKeys();
@@ -29,13 +26,11 @@ QStringList WQWinKeyboard::availableLayouts()
         QString nameKey = QString("%1/Layout Text").arg(preload.value(key).toString());
         result.append(layouts.value(nameKey).toString());
     }
-#endif
     return result;
 }
 
-void WQWinKeyboard::selectLayout(const QString & layout)
+void KWQKeyboard::selectLayout(const QString &layout)
 {
-#ifdef Q_WS_WIN
     QSettings preload(PRELOAD_PATH, QSettings::NativeFormat);
     QSettings layouts(LAYOUTS_PATH, QSettings::NativeFormat);
     QStringList keys = preload.allKeys();
@@ -51,7 +46,4 @@ void WQWinKeyboard::selectLayout(const QString & layout)
             continue;
         }
     }
-#else
-    Q_UNUSED(layout);
-#endif
 }

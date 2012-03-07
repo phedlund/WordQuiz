@@ -49,8 +49,7 @@
 #include "wordquizprefs.h"
 #include "searchlineedit.h"
 #include "wqnotification.h"
-#include "wqmackeyboard.h"
-#include "wqwinkeyboard.h"
+#include "kwqkeyboard.h"
 
 #ifdef Q_WS_WIN
   #include <windows.h>
@@ -1136,12 +1135,7 @@ void WordQuizApp::slotVocabLanguages()
   completer2->setCaseSensitivity(Qt::CaseInsensitive);
   ui.column2TitleLineEdit->setCompleter(completer2);
 
-  QStringList layouts;
-#ifdef Q_WS_MAC
-  layouts = WQMacKeyboard::availableLayouts();
-#elif defined(Q_WS_WIN)
-  layouts = WQWinKeyboard::availableLayouts();
-#endif
+  QStringList layouts = KWQKeyboard::availableLayouts();
   if (layouts.isEmpty()) {
       ui.column1LayoutComboBox->setEnabled(false);
       ui.column2LayoutComboBox->setEnabled(false);
