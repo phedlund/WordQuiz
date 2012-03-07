@@ -78,7 +78,6 @@ SOURCES = src/main.cpp \
     src/searchwidgetcontainer.cpp \
     src/AutoUpdater.cpp
 macx {
-    SOURCES += src/kwqkeyboard_mac.cpp
     QMAKE_MAC_SDK = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.6.sdk
     TARGET = WordQuiz
     ICON = ../dist/mac/WordQuiz.icns
@@ -97,7 +96,8 @@ macx {
     CONFIG += app_bundle
     OBJECTIVE_SOURCES += src/macsearchwidget.mm \
     src/SparkleAutoUpdater.mm \
-    src/CocoaInitializer.mm
+    src/CocoaInitializer.mm \
+    src/kwqkeyboard_mac.mm
 }
 unix:!macx {
     SOURCES += src/kwqkeyboard_x11.cpp
