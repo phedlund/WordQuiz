@@ -94,10 +94,12 @@ macx {
     LIBS += -framework Cocoa -framework IOKit -framework CoreFoundation -framework Foundation -framework Carbon -framework Sparkle
     OBJECTS_DIR += build/o/mac
     CONFIG += app_bundle
+    HEADERS += src/macdockiconhandler.h
     OBJECTIVE_SOURCES += src/macsearchwidget.mm \
     src/SparkleAutoUpdater.mm \
     src/CocoaInitializer.mm \
-    src/kwqkeyboard_mac.mm
+    src/kwqkeyboard_mac.mm \
+    src/macdockiconhandler.mm
 }
 unix:!macx {
     SOURCES += src/kwqkeyboard_x11.cpp
@@ -180,4 +182,3 @@ iss.input = $$PWD/../dist/win/iss_include.txt.in
 iss.output = $$PWD/../dist/win/iss_include.txt
 
 QMAKE_SUBSTITUTES += iss
-

@@ -18,8 +18,8 @@
  ***************************************************************************/
 
 #include "wqapplication.h"
- #include <stdio.h>
- #include <stdlib.h>
+// #include <stdio.h>
+// #include <stdlib.h>
  
 #include <QtCore/QDebug>
 #include <QtCore/QStringList>
@@ -41,7 +41,8 @@
   #include "winsparkle.h"
 #endif
 #ifdef Q_WS_MAC
-  #include <Carbon/Carbon.h>
+  #include "SparkleAutoUpdater.h"
+  #include "macdockiconhandler.h"
 #endif
 
 WQApplication::WQApplication(int & argc, char ** argv) : QApplication(argc, argv)
@@ -210,11 +211,14 @@ WQApplication::WQApplication(int & argc, char ** argv) : QApplication(argc, argv
   setAttribute(Qt::AA_DontShowIconsInMenus);  // Icons are *no longer shown* in menus
 
   AutoUpdater* updater;
-  CocoaInitializer initializer;
   updater = new SparkleAutoUpdater("http://peterandlinda.com/download/appcast.xml");
   if (updater) {
     updater->checkForUpdatesInBackground();
   }
+
+  MacDockIconHandler *dockIconHandler = MacDockIconHandler::instance();
+  connect(dockIconHandler, SIGNAL(dockIconClicked()), this, SLOT(slotDockIconClicked()));
+
 #endif
 #ifdef Q_WS_WIN
     win_sparkle_init();
@@ -243,50 +247,6 @@ bool WQApplication::winEventFilter(MSG * msg, long * result)
     }
   }
   return QCoreApplication::winEventFilter(msg, result);
-}
-#endif
-
-#ifdef Q_WS_MAC
-bool WQApplication::macEventFilter(EventHandlerCallRef caller, EventRef event)
-{
-// based on http://svn.netlabs.org/qtapps/browser/psi/vendor/affinix/current/src/psiapplication.h?rev=2
-  Q_UNUSED(caller);
-  UInt32 eclass = GetEventClass(event);
-  int etype = GetEventKind(event);
-  if (eclass == 'eppc' && etype == kEventAppleEvent) {
-    int i = 0;
-    foreach (QWidget *widget, QApplication::topLevelWidgets()) {
-      WordQuizApp *mainWin = qobject_cast<WordQuizApp *>(widget);
-      if (mainWin)
-          i++;
-    }
-    if (i == 0) {
-      WordQuizApp *win = new WordQuizApp();
-      win->show();
-    }
-    dockActivated();
-  }
-  return false;
-/* sample
-    if(otetsudaiqt != NULL && GetEventClass(event) == kEventClassCommand && GetEventKind(event) == kEventCommandProcess)
-    {
-        HICommand commandStruct;
-        GetEventParameter (event, kEventParamDirectObject,
-                           typeHICommand, NULL, sizeof(HICommand),
-                           NULL, &commandStruct);
-
-        switch (commandStruct.commandID)
-        {
-        case kHICommandAbout:
-            otetsudaiqt->slotHelpAbout();
-            return true;
-        case kHICommandPreferences:
-            otetsudaiqt->slotMainPref();
-            return true;
-        }
-    }
-    return false;
-*/
 }
 #endif
 
@@ -509,4 +469,18 @@ void WQApplication::slotCheckForUpdates()
 #ifdef Q_WS_WIN
     win_sparkle_check_update_with_ui();
 #endif
+}
+
+void WQApplication::slotDockIconClicked() {
+    int i = 0;
+    foreach (QWidget *widget, QApplication::topLevelWidgets()) {
+      WordQuizApp *mainWin = qobject_cast<WordQuizApp *>(widget);
+      if (mainWin)
+          i++;
+    }
+    if (i == 0) {
+      WordQuizApp *win = new WordQuizApp();
+      win->show();
+    }
+    dockActivated();
 }

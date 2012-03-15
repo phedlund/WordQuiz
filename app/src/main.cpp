@@ -24,8 +24,15 @@
 #include "wqapplication.h"
 #include "wordquiz.h"
 
+#ifdef Q_WS_MAC
+#include "CocoaInitializer.h"
+#endif
+
 int main(int argc, char ** argv)
 {
+#ifdef Q_WS_MAC
+  CocoaInitializer initializer;
+#endif
   WQApplication app( argc, argv );
 
   if (app.isAlreadyRunning()){
