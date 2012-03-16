@@ -111,7 +111,7 @@ unix:!macx {
     LIBS += -lX11
 }
 win32 { 
-    SOURCES += kwqkeyboard_win.cpp
+    SOURCES += src/kwqkeyboard_win.cpp
     TARGET = WordQuiz
     OBJECTS_DIR += build/o/win32
     RC_FILE = ../dist/win/WordQuiz.rc
