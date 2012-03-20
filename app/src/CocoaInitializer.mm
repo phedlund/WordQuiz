@@ -16,7 +16,7 @@ class CocoaInitializer::Private
 CocoaInitializer::CocoaInitializer()
 {
 	d = new CocoaInitializer::Private();
-	NSApplicationLoad();
+    //NSApplicationLoad();
 	d->autoReleasePool_ = [[NSAutoreleasePool alloc] init];
 }
 
