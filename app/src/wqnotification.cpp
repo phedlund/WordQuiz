@@ -38,7 +38,7 @@ void WQNotification::setup()
     }
 }
 
-void WQNotification::event(const QString &eventId, const QString& text)
+Phonon::MediaSource WQNotification::source(const QString &eventId, const QString& text)
 {
     Q_UNUSED(text);
     QString fileName;
@@ -51,6 +51,5 @@ void WQNotification::event(const QString &eventId, const QString& text)
     if (eventId == "SyntaxError")
         fileName = sl[2];
 
-    Phonon::MediaObject *notification = Phonon::createPlayer(Phonon::NotificationCategory, Phonon::MediaSource(fileName));
-    notification->play();
+    return Phonon::MediaSource(fileName);
 }

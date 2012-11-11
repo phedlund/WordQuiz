@@ -1,7 +1,7 @@
 ; Script created by ISTool
 ; http://www.lerstad.com/istool.htm
 
-#define QTDIR "C:\QtSDK\Desktop\Qt\4.8.0\mingw"
+#define QTDIR "C:\Qt\4.8.3"
 #define WQDIR "C:\Projects\WordQuiz"
 #define SPARKLEDIR "C:\Projects\WinSparkle-0.3"
 

@@ -2,6 +2,7 @@
 #define WQNOTIFICATION_H
 
 #include <QObject>
+#include <Phonon/MediaSource>
 
 class WQNotification : public QObject
 {
@@ -10,7 +11,7 @@ public:
     explicit WQNotification(QObject *parent = 0);
 
     static void setup();
-    static void event(const QString &eventId, const QString& text=QString());
+    static Phonon::MediaSource source(const QString &eventId, const QString& text=QString());
 
     static QStringList NotificationFileNames;
     static QStringList NotificationResources;
