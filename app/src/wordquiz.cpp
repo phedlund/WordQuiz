@@ -176,13 +176,13 @@ void WordQuizApp::initActions()
   editUndo->setShortcut(QKeySequence(Qt::CTRL + Qt::Key_Z));
   editUndo->setIcon(QIcon(":/src/pics/edit-undo.png"));
   menuEdit->insertAction(menuEdit->actions().at(0), editUndo);
-  toolBarMain->insertAction(toolBarMain->actions().at(5), editUndo);
+  toolBarMain->insertAction(toolBarMain->actions().at(4), editUndo);
 
   QAction *editRedo = m_undoStack->createRedoAction(this);
   editRedo->setShortcut(QKeySequence(Qt::CTRL + Qt::SHIFT + Qt::Key_Z));
   editRedo->setIcon(QIcon(":/src/pics/edit-redo.png"));
   menuEdit->insertAction(menuEdit->actions().at(1), editRedo);
-  toolBarMain->insertAction(toolBarMain->actions().at(6), editRedo);
+  toolBarMain->insertAction(toolBarMain->actions().at(5), editRedo);
   
   connect(m_undoStack, SIGNAL(cleanChanged(bool)), this, SLOT(slotCleanChanged(bool)));
   connect(m_undoStack, SIGNAL(undoTextChanged(const QString &)), this, SLOT(slotUndoTextChanged(const QString &)));
