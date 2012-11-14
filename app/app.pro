@@ -78,7 +78,8 @@ SOURCES = src/main.cpp \
     src/searchwidgetcontainer.cpp \
     src/AutoUpdater.cpp
 macx {
-    QMAKE_MAC_SDK = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.6.sdk
+    QMAKE_MACOSX_DEPLOYMENT_TARGET = 10.6
+    QMAKE_MAC_SDK = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk
     TARGET = WordQuiz
     ICON = ../dist/mac/WordQuiz.icns
     DOC_ICON.files = ../dist/mac/WordQuizDoc.icns ../dist/mac/dsa_pub.pem

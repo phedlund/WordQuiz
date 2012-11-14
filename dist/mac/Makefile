@@ -25,11 +25,11 @@ BASE_LIC ?= /Users/peter/Projects/WordQuiz/dist/LICENSE.GPL2
 SOURCE_DIR ?= /Users/peter/Projects/WordQuiz/dist/mac
 SOURCE_FILES ?= WordQuiz.app LICENSE.GPL2.TXT
 
-BUILD_DIR ?= /Users/peter/Projects/WordQuiz-build-desktop/app/bin
+BUILD_DIR ?= /Users/peter/Projects/WordQuiz-build-Desktop-Release/app/bin
 
 TEMPLATE_DMG ?= template.dmg
 
-QT_SDK ?= /Users/peter/QtSDK/Desktop/Qt/474/gcc/bin
+QT_SDK ?= /Developer/Tools/Qt
 
 
 ################################################################################
