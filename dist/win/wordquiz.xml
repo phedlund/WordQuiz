@@ -2,7 +2,7 @@
 <XML_DIZ_INFO>
 	<MASTER_PAD_VERSION_INFO>
 		<MASTER_PAD_VERSION>3.11</MASTER_PAD_VERSION>
-		<MASTER_PAD_EDITOR>PADGen 3.1.1.47 http://www.padgen.org</MASTER_PAD_EDITOR>
+		<MASTER_PAD_EDITOR>PADGen 3.1.1.50 http://www.padgen.org</MASTER_PAD_EDITOR>
 		<MASTER_PAD_INFO>Portable Application Description, or PAD for short, is a data set that is used by shareware authors to disseminate information to anyone interested in their software products. To find out more go to http://pad.asp-software.org</MASTER_PAD_INFO>
 	</MASTER_PAD_VERSION_INFO>
 	<Company_Info>
@@ -34,9 +34,9 @@
 	</Company_Info>
 	<Program_Info>
 		<Program_Name>WordQuiz</Program_Name>
-		<Program_Version>2012.03.20</Program_Version>
-		<Program_Release_Month>03</Program_Release_Month>
-		<Program_Release_Day>20</Program_Release_Day>
+		<Program_Version>2012.11.14</Program_Version>
+		<Program_Release_Month>11</Program_Release_Month>
+		<Program_Release_Day>14</Program_Release_Day>
 		<Program_Release_Year>2012</Program_Release_Year>
 		<Program_Cost_Dollars>0</Program_Cost_Dollars>
 		<Program_Cost_Other_Code />
@@ -46,14 +46,14 @@
 		<Program_Install_Support>Install and Uninstall</Program_Install_Support>
 		<Program_OS_Support>Win7 x32,Win7 x64,WinVista,WinVista x64,WinXP</Program_OS_Support>
 		<Program_Language>English</Program_Language>
-		<Program_Change_Info>Ability to assign different keyboard layouts to each column.</Program_Change_Info>
+		<Program_Change_Info>Stability and performance improvements.</Program_Change_Info>
 		<Program_Specific_Category>Education</Program_Specific_Category>
 		<Program_Category_Class>Education::Languages</Program_Category_Class>
 		<Program_System_Requirements />
 		<File_Info>
-			<File_Size_Bytes>5554444</File_Size_Bytes>
-			<File_Size_K>5424</File_Size_K>
-			<File_Size_MB>5.30</File_Size_MB>
+			<File_Size_Bytes>5492206</File_Size_Bytes>
+			<File_Size_K>5363</File_Size_K>
+			<File_Size_MB>5.24</File_Size_MB>
 		</File_Info>
 		<Expire_Info>
 			<Has_Expire_Info>N</Has_Expire_Info>
